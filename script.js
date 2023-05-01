@@ -33,7 +33,7 @@
 // @match        https://lh7.googleusercontent.com/*
 // @match        https://lh8.googleusercontent.com/*
 // @match        https://lh9.googleusercontent.com/*
-// @match        https://roozrang.ir/wp-content*
+// @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
 
@@ -77,13 +77,10 @@
             case 'lh9.googleusercontent.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
 //---Wordpress---
-            case 'sabakhabar.ir':
-            case 'www.filimo.com':
-            case 'techcrunch.com':
-            case 'roozrang.ir/wp-content':
-                return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
             default:
-                return url.toString();
+                return url.pathname.includes('/wp-content/')
+                     ? url.origin + url.pathname.replace(/-\d+x\d+\./, '.')
+                     : url.toString();
         }
     }(new URL(location.href)));
     if (location.href !== destination) location.href = destination;
