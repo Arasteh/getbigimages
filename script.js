@@ -33,6 +33,7 @@
 // @match        https://lh7.googleusercontent.com/*
 // @match        https://lh8.googleusercontent.com/*
 // @match        https://lh9.googleusercontent.com/*
+// @match        https://images.unsplash.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -44,6 +45,7 @@
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
             case 'ipm.ssaa.ir':
+            case 'images.unsplash.com':
                 return url.origin + url.pathname;
             case 'images1.bonhams.com':
                 [...url.searchParams].filter(x => x[0] !== 'src').forEach(x => url.searchParams.delete(x[0]));
