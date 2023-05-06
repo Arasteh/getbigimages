@@ -34,6 +34,7 @@
 // @match        https://lh8.googleusercontent.com/*
 // @match        https://lh9.googleusercontent.com/*
 // @match        https://images.unsplash.com/*
+// @match        https://thumbs.dreamstime.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -78,6 +79,8 @@
             case 'lh8.googleusercontent.com':
             case 'lh9.googleusercontent.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
+            case 'thumbs.dreamstime.com':
+                return url.origin + url.pathname.replace(/\/b\/|\/s\/|\/m\/|\/t\/|\/x\/|\/l\//, '/z/');
 //---Wordpress---
             default:
                 return url.pathname.includes('/wp-content/')
