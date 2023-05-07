@@ -35,6 +35,7 @@
 // @match        https://lh9.googleusercontent.com/*
 // @match        https://images.unsplash.com/*
 // @match        https://thumbs.dreamstime.com/*
+// @match        https://news.ut.ac.ir/images*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -81,6 +82,8 @@
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
             case 'thumbs.dreamstime.com':
                 return url.origin + url.pathname.replace(/\/b\/|\/s\/|\/m\/|\/t\/|\/x\/|\/l\//, '/z/');
+            case 'news.ut.ac.ir':
+                return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
 //---Wordpress---
             default:
                 return url.pathname.includes('/wp-content/')
