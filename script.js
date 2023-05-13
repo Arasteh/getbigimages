@@ -36,6 +36,7 @@
 // @match        https://images.unsplash.com/*
 // @match        https://thumbs.dreamstime.com/*
 // @match        https://news.ut.ac.ir/images*
+// @match        https://pentagram-production.imgix.net/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -44,11 +45,6 @@
     'use strict';
     const destination = (function (url) {
         switch (url.host) {
-            case 'dkstatics-public.digikala.com':
-            case 'www.christies.com':
-            case 'ipm.ssaa.ir':
-            case 'images.unsplash.com':
-                return url.origin + url.pathname;
             case 'images1.bonhams.com':
                 [...url.searchParams].filter(x => x[0] !== 'src').forEach(x => url.searchParams.delete(x[0]));
                 return url.toString();
@@ -70,6 +66,18 @@
                 return url.origin + url.pathname.replace(/\/A\/|\/C\//, '/B/');
             case 'images.metmuseum.org':
                 return url.origin + url.pathname.replace(/\/web-additional\//, '/original/');
+            case 'thumbs.dreamstime.com':
+                return url.origin + url.pathname.replace(/\/b\/|\/s\/|\/m\/|\/t\/|\/x\/|\/l\//, '/z/');
+            case 'news.ut.ac.ir':
+                return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
+//---Trim everything after '?'---
+            case 'dkstatics-public.digikala.com':
+            case 'www.christies.com':
+            case 'ipm.ssaa.ir':
+            case 'images.unsplash.com':
+            case 'pentagram-production.imgix.net':
+                return url.origin + url.pathname;
+//---Google---
             case 'lh1.googleusercontent.com':
             case 'lh2.googleusercontent.com':
             case 'lh3.googleusercontent.com':
@@ -80,11 +88,7 @@
             case 'lh8.googleusercontent.com':
             case 'lh9.googleusercontent.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
-            case 'thumbs.dreamstime.com':
-                return url.origin + url.pathname.replace(/\/b\/|\/s\/|\/m\/|\/t\/|\/x\/|\/l\//, '/z/');
-            case 'news.ut.ac.ir':
-                return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
-//---Wordpress---
+//---Wordpress sites---
             default:
                 return url.pathname.includes('/wp-content/')
                      ? url.origin + url.pathname.replace(/-\d+x\d+\./, '.')
