@@ -37,6 +37,7 @@
 // @match        https://thumbs.dreamstime.com/*
 // @match        https://news.ut.ac.ir/images*
 // @match        https://pentagram-production.imgix.net/*
+// @match        https://imageio.forbes.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -76,6 +77,7 @@
             case 'ipm.ssaa.ir':
             case 'images.unsplash.com':
             case 'pentagram-production.imgix.net':
+            case 'imageio.forbes.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
