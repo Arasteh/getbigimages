@@ -11,8 +11,10 @@
 // @match        https://m.media-amazon.com/images/*
 // @match        https://images-eu.ssl-images-amazon.com/images/*
 // @match        https://www.filimo.com/shot/wp-content/uploads/*
-// @match        https://img.freepik.com/free-*
-// @match        https://img.freepik.com/premium-*
+// @match        https://img.freepik.com/free-vector*
+// @match        https://img.freepik.com/premium-vector*
+// @match        https://img.freepik.com/free-photo*
+// @match        https://img.freepik.com/premium-photo*
 // @match        https://statics.basalam.com/public*
 // @match        https://sabakhabar.ir/wp-content*
 // @match        https://cdn.isna.ir/d*
@@ -36,6 +38,7 @@
 // @match        https://news.ut.ac.ir/images*
 // @match        https://pentagram-production.imgix.net/*
 // @match        https://imageio.forbes.com/*
+// @match        https://cdn.dribbble.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -76,6 +79,7 @@
             case 'images.unsplash.com':
             case 'pentagram-production.imgix.net':
             case 'imageio.forbes.com':
+            case 'cdn.dribbble.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
