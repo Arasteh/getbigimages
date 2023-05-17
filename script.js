@@ -91,7 +91,7 @@
 //---Wordpress sites---
             default:
                 return url.pathname.includes('/wp-content/')
-                     ? url.origin + url.pathname.replace(/-\d+x\d+\./, '.')
+                     ? url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
                      : url.toString();
         }
     }(new URL(location.href)));
