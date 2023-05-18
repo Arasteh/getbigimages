@@ -39,6 +39,7 @@
 // @match        https://pentagram-production.imgix.net/*
 // @match        https://imageio.forbes.com/*
 // @match        https://cdn.dribbble.com/*
+// @match        https://image.cnbcfm.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -80,6 +81,7 @@
             case 'pentagram-production.imgix.net':
             case 'imageio.forbes.com':
             case 'cdn.dribbble.com':
+            case 'image.cnbcfm.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
