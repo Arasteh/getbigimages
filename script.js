@@ -40,6 +40,8 @@
 // @match        https://imageio.forbes.com/*
 // @match        https://cdn.dribbble.com/*
 // @match        https://image.cnbcfm.com/*
+// @match        https://digitalhub.fifa.com/*
+// @match        https://www.fractal-design.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -73,6 +75,8 @@
                 return url.origin + url.pathname.replace(/\/b\/|\/s\/|\/m\/|\/t\/|\/x\/|\/l\//, '/z/');
             case 'news.ut.ac.ir':
                 return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
+            case 'www.fractal-design.com':
+                return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
@@ -82,6 +86,7 @@
             case 'imageio.forbes.com':
             case 'cdn.dribbble.com':
             case 'image.cnbcfm.com':
+            case 'digitalhub.fifa.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
