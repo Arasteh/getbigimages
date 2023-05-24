@@ -42,6 +42,7 @@
 // @match        https://image.cnbcfm.com/*
 // @match        https://digitalhub.fifa.com/*
 // @match        https://www.fractal-design.com/*
+// @match        https://media.newyorker.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -77,6 +78,8 @@
                 return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
             case 'www.fractal-design.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
+            case 'media.newyorker.com':
+                return url.origin + url.pathname.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
