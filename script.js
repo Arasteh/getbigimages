@@ -43,6 +43,7 @@
 // @match        https://digitalhub.fifa.com/*
 // @match        https://www.fractal-design.com/*
 // @match        https://media.newyorker.com/*
+// @match        static.vecteezy.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -80,6 +81,8 @@
                 return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
             case 'media.newyorker.com':
                 return url.origin + url.pathname.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
+            case 'static.vecteezy.com':
+                return url.origin + url.pathname.replace(/\/large_2x\/|\/small_2x\//, '/original/').replace(/\/thumbnails\//, '/previews/');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
