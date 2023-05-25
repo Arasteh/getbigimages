@@ -87,7 +87,7 @@
             case 'images.vestiairecollective.com':
                 return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
             case 's.cafebazaar.ir':
-                return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true/resize,h_8000,lossless_true')
+                return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true')
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
