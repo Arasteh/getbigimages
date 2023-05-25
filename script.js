@@ -45,6 +45,7 @@
 // @match        https://media.newyorker.com/*
 // @match        static.vecteezy.com/*
 // @match        https://images.vestiairecollective.com/cdn-cgi*
+// @match        https://s.cafebazaar.ir/images*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -85,6 +86,8 @@
                 return url.origin + url.pathname.replace(/\/large_2x\/|\/large\/|\/small_2x\/|\/small\/|\/non_2x\/|\/non\//, '/original/').replace(/\/thumbnails\//, '/previews/');
             case 'images.vestiairecollective.com':
                 return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
+            case 's.cafebazaar.ir':
+                return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true/resize,h_8000,lossless_true')
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
