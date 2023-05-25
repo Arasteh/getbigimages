@@ -44,6 +44,7 @@
 // @match        https://www.fractal-design.com/*
 // @match        https://media.newyorker.com/*
 // @match        static.vecteezy.com/*
+// @match        https://images.vestiairecollective.com/cdn-cgi*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -56,9 +57,8 @@
                 [...url.searchParams].filter(x => x[0] !== 'src').forEach(x => url.searchParams.delete(x[0]));
                 return url.toString();
             case 'm.media-amazon.com':
-                return url.origin + url.pathname.replace(/@.+\./, '@.');
             case 'images-eu.ssl-images-amazon.com':
-                return url.origin + url.pathname.replace(/\._.+_\./, '.');
+                return url.origin + url.pathname.replace(/(@+)[^@]+\.|\._.+_\./, '$1.');
             case 'img.freepik.com':
                 return url.origin + url.pathname + '?w=2000';
             case 'statics.basalam.com':
@@ -82,7 +82,9 @@
             case 'media.newyorker.com':
                 return url.origin + url.pathname.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
             case 'static.vecteezy.com':
-                return url.origin + url.pathname.replace(/\/large_2x\/|\/small_2x\//, '/original/').replace(/\/thumbnails\//, '/previews/');
+                return url.origin + url.pathname.replace(/\/large_2x\/|\/large\/|\/small_2x\/|\/small\/|\/non_2x\/|\/non\//, '/original/').replace(/\/thumbnails\//, '/previews/');
+            case 'images.vestiairecollective.com':
+                return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
