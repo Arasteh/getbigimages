@@ -33,6 +33,7 @@
 // @match        https://lh7.googleusercontent.com/*
 // @match        https://lh8.googleusercontent.com/*
 // @match        https://lh9.googleusercontent.com/*
+// @match        https://play-lh.googleusercontent.com/*
 // @match        https://images.unsplash.com/*
 // @match        https://thumbs.dreamstime.com/*
 // @match        https://news.ut.ac.ir/images*
@@ -46,6 +47,7 @@
 // @match        static.vecteezy.com/*
 // @match        https://images.vestiairecollective.com/cdn-cgi*
 // @match        https://s.cafebazaar.ir/images*
+// @match        https://media.farsnews.ir/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -87,7 +89,9 @@
             case 'images.vestiairecollective.com':
                 return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
             case 's.cafebazaar.ir':
-                return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true')
+                return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true');
+            case 'media.farsnews.ir':
+                return url.origin + url.pathname.replace(/_PhotoX./, '_PhotoT.');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
@@ -109,6 +113,7 @@
             case 'lh7.googleusercontent.com':
             case 'lh8.googleusercontent.com':
             case 'lh9.googleusercontent.com':
+            case 'play-lh.googleusercontent.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
 //---Wordpress sites---
             default:
