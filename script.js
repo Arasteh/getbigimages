@@ -48,6 +48,7 @@
 // @match        https://images.vestiairecollective.com/cdn-cgi*
 // @match        https://s.cafebazaar.ir/images*
 // @match        https://media.farsnews.ir/*
+// @match        https://static.digiato.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -92,6 +93,8 @@
                 return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true');
             case 'media.farsnews.ir':
                 return url.origin + url.pathname.replace(/_PhotoX./, '_PhotoT.');
+            case 'static.digiato.com':
+                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
