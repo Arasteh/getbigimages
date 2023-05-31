@@ -99,6 +99,7 @@
                 return url.origin + url.pathname.replace(/_PhotoX./, '_PhotoT.');
             case 'static.digiato.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
+//---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
             case 'is3-ssl.mzstatic.com':
