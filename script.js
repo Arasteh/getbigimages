@@ -53,6 +53,7 @@
 // @match        https://is2-ssl.mzstatic.com/image*
 // @match        https://is3-ssl.mzstatic.com/image*
 // @match        https://is4-ssl.mzstatic.com/image*
+// @match        https://www.beyondnow.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -115,6 +116,7 @@
             case 'cdn.dribbble.com':
             case 'image.cnbcfm.com':
             case 'digitalhub.fifa.com':
+            case 'www.beyondnow.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
