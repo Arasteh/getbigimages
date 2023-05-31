@@ -104,7 +104,7 @@
             case 'is2-ssl.mzstatic.com':
             case 'is3-ssl.mzstatic.com':
             case 'is4-ssl.mzstatic.com':
-                return url.origin + url.pathname.replace(/.png\/\d+x0w.webp/, '.png/8000x0w.png').replace(/.jpg\/\d+x0w.webp/, '.jpg/8000x0w.png');
+                return url.origin + url.pathname.replace(/.png\/\d+x0w.webp/, '.png/8000x0w.png').replace(/.jpg\/\d+x0w.webp/, '.jpg/8000x0w.jpg');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
