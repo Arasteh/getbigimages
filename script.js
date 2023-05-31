@@ -51,6 +51,8 @@
 // @match        https://static.digiato.com/*
 // @match        https://is1-ssl.mzstatic.com/image*
 // @match        https://is2-ssl.mzstatic.com/image*
+// @match        https://is3-ssl.mzstatic.com/image*
+// @match        https://is4-ssl.mzstatic.com/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -99,6 +101,8 @@
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
+            case 'is3-ssl.mzstatic.com':
+            case 'is4-ssl.mzstatic.com':
                 return url.origin + url.pathname.replace(/\/\d+x0w./, '/8000x0w.');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
