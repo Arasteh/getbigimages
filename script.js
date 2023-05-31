@@ -49,6 +49,8 @@
 // @match        https://s.cafebazaar.ir/images*
 // @match        https://media.farsnews.ir/*
 // @match        https://static.digiato.com/*
+// @match        https://is1-ssl.mzstatic.com/image*
+// @match        https://is2-ssl.mzstatic.com/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -95,6 +97,9 @@
                 return url.origin + url.pathname.replace(/_PhotoX./, '_PhotoT.');
             case 'static.digiato.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
+            case 'is1-ssl.mzstatic.com':
+            case 'is2-ssl.mzstatic.com':
+                return url.origin + url.pathname.replace(/\/\d+x0w./, '/8000x0w.');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
