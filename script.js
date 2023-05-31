@@ -100,6 +100,8 @@
                 return url.origin + url.pathname.replace(/_PhotoX./, '_PhotoT.');
             case 'static.digiato.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
+            case 'cdn.dribbble.com':
+                return url.origin + url.pathname.replace(/\/normal\//, '/original/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -113,7 +115,6 @@
             case 'images.unsplash.com':
             case 'pentagram-production.imgix.net':
             case 'imageio.forbes.com':
-            case 'cdn.dribbble.com':
             case 'image.cnbcfm.com':
             case 'digitalhub.fifa.com':
             case 'www.beyondnow.com':
