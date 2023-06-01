@@ -55,6 +55,8 @@
 // @match        https://is4-ssl.mzstatic.com/image*
 // @match        https://www.beyondnow.com/*
 // @match        https://smallimg.pngkey.com/*
+// @match        https://static.toiimg.com/*
+// @match        https://images.squarespace-cdn.com/content*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -105,6 +107,8 @@
                 return url.origin + url.pathname.replace(/\/normal\//, '/original/');
             case 'smallimg.pngkey.com':
                 return url.origin.replace(/smallimg.pngkey/, 'pngkey') + url.pathname.replace(/\/png\/small\//, '/png/full/');
+            case 'static.toiimg.com':
+                return url.origin + url.pathname.replace(/,.+\./, '.').replace(/\/thumb\//, '/photo/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -121,6 +125,7 @@
             case 'image.cnbcfm.com':
             case 'digitalhub.fifa.com':
             case 'www.beyondnow.com':
+            case 'images.squarespace-cdn.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
