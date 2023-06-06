@@ -57,6 +57,7 @@
 // @match        https://smallimg.pngkey.com/*
 // @match        https://static.toiimg.com/*
 // @match        https://images.squarespace-cdn.com/content*
+// @match        https://media.cinemapress.ir/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -78,6 +79,7 @@
             case 'cdn.isna.ir':
             case 'media.mehrnews.com':
             case 'img9.irna.ir':
+            case 'media.cinemapress.ir':
                 return url.origin + url.pathname.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
                 return url.origin + url.pathname.replace(/\/intro\/|\/medium\//, '/');
