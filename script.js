@@ -58,6 +58,7 @@
 // @match        https://static.toiimg.com/*
 // @match        https://images.squarespace-cdn.com/content*
 // @match        https://media.cinemapress.ir/*
+// @match        https://cdnfa.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -111,6 +112,8 @@
                 return url.origin.replace(/smallimg.pngkey/, 'pngkey') + url.pathname.replace(/\/png\/small\//, '/png/full/');
             case 'static.toiimg.com':
                 return url.origin + url.pathname.replace(/,.+\./, '.').replace(/\/thumb\//, '/photo/');
+            case 'cdnfa.com':
+                return url.origin + url.pathname.replace(/\/thumb\/|\/normal\//, '/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
