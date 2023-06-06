@@ -59,6 +59,7 @@
 // @match        https://images.squarespace-cdn.com/content*
 // @match        https://media.cinemapress.ir/*
 // @match        https://cdnfa.com/*
+// @match        https://idebook.ir/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -114,6 +115,8 @@
                 return url.origin + url.pathname.replace(/,.+\./, '.').replace(/\/thumb\//, '/photo/');
             case 'cdnfa.com':
                 return url.origin + url.pathname.replace(/\/thumb\/|\/normal\//, '/');
+            case 'idebook.ir':
+                return url.origin + url.pathname.replace(/\/small\/small_/, '/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
