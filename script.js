@@ -60,6 +60,8 @@
 // @match        https://media.cinemapress.ir/*
 // @match        https://cdnfa.com/*
 // @match        https://idebook.ir/*
+// @match        https://images.adsttc.com/media*
+// @match        https://decodl.net/api/search-service/image/https%3A%2F%2Fimg.freepik*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -117,6 +119,10 @@
                 return url.origin + url.pathname.replace(/\/thumb\/|\/normal\//, '/');
             case 'idebook.ir':
                 return url.origin + url.pathname.replace(/\/small\/small_/, '/');
+            case 'images.adsttc.com':
+                return url.origin + url.pathname.replace(/\/thumb_|\/small_|\/medium_/, '/large_');
+            case 'decodl.net':
+                return url.origin.replace(/https:\/\/decodl.net/, ' ') + url.pathname.replace(/\/api\/search-service\/image\/h/, 'h').replace(/%3A/, ':').replace(/%2F%2F/, '//').replace(/%2F/, '/').replace(/%3F/, '?').replace(/%3D/, '=');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
