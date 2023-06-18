@@ -15,6 +15,8 @@
 // @match        https://img.freepik.com/premium-vector*
 // @match        https://img.freepik.com/free-photo*
 // @match        https://img.freepik.com/premium-photo*
+// @match        https://img.freepik.com/free-psd*
+// @match        https://img.freepik.com/premium-psd*
 // @match        https://statics.basalam.com/public*
 // @match        https://sabakhabar.ir/wp-content*
 // @match        https://cdn.isna.ir/d*
@@ -63,6 +65,7 @@
 // @match        https://images.adsttc.com/media*
 // @match        https://decodl.net/api/search-service/image/https%3A%2F%2Fimg.freepik*
 // @match        https://image.shutterstock.com/image*
+// @match        https://cdn.theatlantic.com/thumbor*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -126,6 +129,8 @@
                 return url.origin.replace(/https:\/\/decodl.net/, ' ') + url.pathname.replace(/\/api\/search-service\/image\/h/, 'h').replace(/%3A/, ':').replace(/%2F%2F/, '//').replace(/%2F/, '/').replace(/%3F/, '?').replace(/%3D/, '=');
             case 'shutterstock.com':
                 return url.origin + url.pathname.replace(/\/image-vector\//, '/z/').replace(/-600w-|-290w-/, '-');
+            case 'cdn.theatlantic.com':
+                return url.origin + url.pathname.replace(/thumbor\/.+\/media\//, 'media/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
