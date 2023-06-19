@@ -66,6 +66,7 @@
 // @match        https://decodl.net/api/search-service/image/https%3A%2F%2Fimg.freepik*
 // @match        https://image.shutterstock.com/image*
 // @match        https://cdn.theatlantic.com/thumbor*
+// @match        https://yassavoli.com/uploads*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -148,6 +149,7 @@
             case 'digitalhub.fifa.com':
             case 'www.beyondnow.com':
             case 'images.squarespace-cdn.com':
+            case 'yassavoli.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
