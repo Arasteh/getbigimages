@@ -67,6 +67,8 @@
 // @match        https://image.shutterstock.com/image*
 // @match        https://cdn.theatlantic.com/thumbor*
 // @match        https://yassavoli.com/uploads*
+// @match        https://static01.nyt.com/images*
+// @match        https://images.theconversation.com/files*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -150,6 +152,8 @@
             case 'www.beyondnow.com':
             case 'images.squarespace-cdn.com':
             case 'yassavoli.com':
+            case 'nyt.com':
+            case 'images.theconversation.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
