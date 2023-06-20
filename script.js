@@ -69,6 +69,7 @@
 // @match        https://yassavoli.com/uploads*
 // @match        https://static01.nyt.com/images*
 // @match        https://images.theconversation.com/files*
+// @match        https://mediaproxy.salon.com/width*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -134,6 +135,8 @@
                 return url.origin + url.pathname.replace(/\/image-vector\//, '/z/').replace(/-600w-|-290w-/, '-');
             case 'cdn.theatlantic.com':
                 return url.origin + url.pathname.replace(/thumbor\/.+\/media\//, 'media/');
+            case 'mediaproxy.salon.com':
+                return url.origin.replace(/proxy/, '') + url.pathname.replace(/width\/\d+\/https:\/\/media.salon.com\//, '');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
