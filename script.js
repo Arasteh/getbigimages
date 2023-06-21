@@ -11,12 +11,8 @@
 // @match        https://m.media-amazon.com/images/*
 // @match        https://images-eu.ssl-images-amazon.com/images/*
 // @match        https://www.filimo.com/shot/wp-content/uploads/*
-// @match        https://img.freepik.com/free-vector*
-// @match        https://img.freepik.com/premium-vector*
-// @match        https://img.freepik.com/free-photo*
-// @match        https://img.freepik.com/premium-photo*
-// @match        https://img.freepik.com/free-psd*
-// @match        https://img.freepik.com/premium-psd*
+// @match        https://img.freepik.com/free-*
+// @match        https://img.freepik.com/premium-*
 // @match        https://statics.basalam.com/public*
 // @match        https://sabakhabar.ir/wp-content*
 // @match        https://cdn.isna.ir/d*
