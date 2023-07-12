@@ -66,13 +66,14 @@
 // @match        https://static01.nyt.com/images*
 // @match        https://images.theconversation.com/files*
 // @match        https://mediaproxy.salon.com/width*
+// @match        https://decodl.net/api/search-service/image/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
 
 (function () {
     'use strict';
-    const destination = (function (url) {
+    const destination = (function normalizer(url) {
         switch (url.host) {
             case 'images1.bonhams.com':
                 [...url.searchParams].filter(x => x[0] !== 'src').forEach(x => url.searchParams.delete(x[0]));
@@ -125,8 +126,6 @@
                 return url.origin + url.pathname.replace(/\/small\/small_/, '/');
             case 'images.adsttc.com':
                 return url.origin + url.pathname.replace(/\/thumb_|\/small_|\/medium_/, '/large_');
-            case 'decodl.net':
-                return url.origin.replace(/https:\/\/decodl.net/, ' ') + url.pathname.replace(/\/api\/search-service\/image\/h/, 'h').replace(/%3A/, ':').replace(/%2F%2F/, '//').replace(/%2F/, '/').replace(/%3F/, '?').replace(/%3D/, '=');
             case 'shutterstock.com':
                 return url.origin + url.pathname.replace(/\/image-vector\//, '/z/').replace(/-600w-|-290w-/, '-');
             case 'cdn.theatlantic.com':
@@ -166,6 +165,12 @@
             case 'lh9.googleusercontent.com':
             case 'play-lh.googleusercontent.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
+//---decodl---
+            case 'decodl.net':
+                const pathname = decodeURI(url.pathname);
+                return pathname.includes('/api/search-service/image/')
+                     ? normalizer(new URL(pathname.split('/api/search-service/image/')[1].replace(/%2F/ig, '/').replace(/%3F/ig, '?').replace(/%3D/ig, '=').replace(/%3A/ig, ':')))
+                     : url.toString();
 //---Wordpress sites---
             default:
                 return url.pathname.includes('/wp-content/')
