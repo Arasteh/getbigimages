@@ -59,7 +59,6 @@
 // @match        https://cdnfa.com/*
 // @match        https://idebook.ir/*
 // @match        https://images.adsttc.com/media*
-// @match        https://decodl.net/api/search-service/image/https%3A%2F%2Fimg.freepik*
 // @match        https://image.shutterstock.com/image*
 // @match        https://cdn.theatlantic.com/thumbor*
 // @match        https://yassavoli.com/uploads*
@@ -91,13 +90,13 @@
             case 'media.cinemapress.ir':
                 return url.origin + url.pathname.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
-                return url.origin + url.pathname.replace(/\/intro\/|\/medium\//, '/');
+                return url.origin + url.pathname.replace(/\/(intro|medium)\//, '/');
             case 'idc0-cdn0.khamenei.ir':
-                return url.origin + url.pathname.replace(/\/A\/|\/C\//, '/B/');
+                return url.origin + url.pathname.replace(/\/[AC]\//, '/B/');
             case 'images.metmuseum.org':
                 return url.origin + url.pathname.replace(/\/web-additional\//, '/original/');
             case 'thumbs.dreamstime.com':
-                return url.origin + url.pathname.replace(/\/b\/|\/s\/|\/m\/|\/t\/|\/x\/|\/l\//, '/z/');
+                return url.origin + url.pathname.replace(/\/[bsmtxl]\//, '/z/');
             case 'news.ut.ac.ir':
                 return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
             case 'www.fractal-design.com':
@@ -109,9 +108,9 @@
             case 'images.vestiairecollective.com':
                 return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
             case 's.cafebazaar.ir':
-                return url.origin + url.pathname + ('?x-img=v1/format,type_png,lossless_true');
+                return url.origin + url.pathname + '?x-img=v1/format,type_png,lossless_true';
             case 'media.farsnews.ir':
-                return url.origin + url.pathname.replace(/_PhotoX./, '_PhotoT.');
+                return url.origin + url.pathname.replace(/_PhotoX\./, '_PhotoT.');
             case 'static.digiato.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
             case 'cdn.dribbble.com':
@@ -125,7 +124,7 @@
             case 'idebook.ir':
                 return url.origin + url.pathname.replace(/\/small\/small_/, '/');
             case 'images.adsttc.com':
-                return url.origin + url.pathname.replace(/\/thumb_|\/small_|\/medium_/, '/large_');
+                return url.origin + url.pathname.replace(/\/(thumb|small|medium)_/, '/large_');
             case 'shutterstock.com':
                 return url.origin + url.pathname.replace(/\/image-vector\//, '/z/').replace(/-600w-|-290w-/, '-');
             case 'cdn.theatlantic.com':
@@ -137,7 +136,7 @@
             case 'is2-ssl.mzstatic.com':
             case 'is3-ssl.mzstatic.com':
             case 'is4-ssl.mzstatic.com':
-                return url.origin + url.pathname.replace(/.png\/\d+x0w.webp/, '.png/8000x0w.png').replace(/.jpg\/\d+x0w.webp/, '.jpg/8000x0w.jpg');
+                return url.origin + url.pathname.replace(/\.(png|jpg)\/\d+x0w.webp/, '.$1/8000x0w.$1');
 //---Trim everything after '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
@@ -167,9 +166,9 @@
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
 //---decodl---
             case 'decodl.net':
-                const pathname = decodeURI(url.pathname);
+                const pathname = decodeURIComponent(url.pathname);
                 return pathname.includes('/api/search-service/image/')
-                     ? normalizer(new URL(pathname.split('/api/search-service/image/')[1].replace(/%2F/ig, '/').replace(/%3F/ig, '?').replace(/%3D/ig, '=').replace(/%3A/ig, ':')))
+                     ? normalizer(new URL(pathname.split('/api/search-service/image/')[1]))
                      : url.toString();
 //---Wordpress sites---
             default:
