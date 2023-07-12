@@ -2,8 +2,8 @@
 // @name         Canonicalize images addresses
 // @namespace    http://tampermonkey.net/
 // @version      0.1
-// @description  try to take over the world!
-// @author       You
+// @description  Load images in the highest resolution available.
+// @author       @ebraminio @arasteh
 // @match        https://images1.bonhams.com/image*
 // @match        https://dkstatics-public.digikala.com/*
 // @match        https://www.christies.com/img/*
@@ -65,6 +65,9 @@
 // @match        https://static01.nyt.com/images*
 // @match        https://images.theconversation.com/files*
 // @match        https://mediaproxy.salon.com/width*
+// @match        https://galleryinfo.ir/Images*
+// @match        https://towhidshop.org/uploads/image*
+// @match        https://www.posterfortomorrow.org/images*
 // @match        https://decodl.net/api/search-service/image/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
@@ -131,6 +134,10 @@
                 return url.origin + url.pathname.replace(/thumbor\/.+\/media\//, 'media/');
             case 'mediaproxy.salon.com':
                 return url.origin.replace(/proxy/, '') + url.pathname.replace(/width\/\d+\/https:\/\/media.salon.com\//, '');
+            case 'galleryinfo.ir':
+                return url.origin + url.pathname.replace(/\/GalleryT_/, '/GalleryB_');
+            case 'www.posterfortomorrow.org':
+                return url.origin + url.pathname.replace(/thumbs\/entries\/\d+x\d+\//, 'entries/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -151,6 +158,7 @@
             case 'yassavoli.com':
             case 'nyt.com':
             case 'images.theconversation.com':
+            case 'towhidshop.org':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
