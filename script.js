@@ -175,8 +175,8 @@
 //---decodl---
             case 'decodl.net':
                 const pathname = decodeURIComponent(url.pathname);
-                if (pathname.includes('https://image.shutterstock.com'))
-                    return url.toString().replace(/%2Fimage-vector%2F/, '%2Fz%2F').replace(/-600w-/, '-');
+                if (pathname.includes('.shutterstock.com'))
+                    return url.toString().replace(/%2Fimage-vector%2F/, '%2Fz%2F').replace(/-600w-|-290w-/, '-');
                 return pathname.includes('/api/search-service/image/')
                      ? normalizer(new URL(pathname.split('/api/search-service/image/')[1]))
                      : url.toString();
