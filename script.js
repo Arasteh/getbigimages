@@ -75,6 +75,7 @@
 // @match        https://shop.matchstic.com/cdn*
 // @match        https://img.semafor.com/*
 // @match        https://prod-lippincott.imgix.net/*
+// @match        https://wp.cghnyc.com/media*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -147,6 +148,8 @@
             case 'paragonn-cdn.nyc3.cdn.digitaloceanspaces.com':
             case 's3.amazonaws.com':
                 return url.origin + url.pathname.replace(/\/_\d+x\d+_crop_.+\//, '/');
+            case 'wp.cghnyc.com':
+                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
