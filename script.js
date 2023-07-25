@@ -69,6 +69,7 @@
 // @match        https://towhidshop.org/uploads/image*
 // @match        https://www.posterfortomorrow.org/images*
 // @match        https://decodl.net/api/search-service/image/*
+// @match        https://wearecollins.imgix.net/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -159,6 +160,7 @@
             case 'nyt.com':
             case 'images.theconversation.com':
             case 'towhidshop.org':
+            case 'wearecollins.imgix.net':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
