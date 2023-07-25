@@ -72,6 +72,7 @@
 // @match        https://wearecollins.imgix.net/*
 // @match        https://paragonn-cdn.nyc3.cdn.digitaloceanspaces.com/*
 // @match        https://s3.amazonaws.com/medias.site.lg2.com/*
+// @match        https://shop.matchstic.com/cdn*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -166,6 +167,7 @@
             case 'images.theconversation.com':
             case 'towhidshop.org':
             case 'wearecollins.imgix.net':
+            case 'shop.matchstic.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
