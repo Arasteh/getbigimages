@@ -77,6 +77,7 @@
 // @match        https://prod-lippincott.imgix.net/*
 // @match        https://wp.cghnyc.com/media*
 // @match        https://dstudio.imgix.net/*
+// @match        https://images.prismic.io/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -177,6 +178,7 @@
             case 'pentagram-production.imgix.net':
             case 'prod-lippincott.imgix.net':
             case 'dstudio.imgix.net':
+            case 'images.prismic.io':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
