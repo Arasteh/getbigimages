@@ -74,6 +74,7 @@
 // @match        https://s3.amazonaws.com/medias.site.lg2.com/*
 // @match        https://shop.matchstic.com/cdn*
 // @match        https://img.semafor.com/*
+// @match        https://prod-lippincott.imgix.net/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -157,7 +158,6 @@
             case 'www.christies.com':
             case 'ipm.ssaa.ir':
             case 'images.unsplash.com':
-            case 'pentagram-production.imgix.net':
             case 'imageio.forbes.com':
             case 'image.cnbcfm.com':
             case 'digitalhub.fifa.com':
@@ -167,9 +167,11 @@
             case 'nyt.com':
             case 'images.theconversation.com':
             case 'towhidshop.org':
-            case 'wearecollins.imgix.net':
             case 'shop.matchstic.com':
             case 'img.semafor.com':
+            case 'wearecollins.imgix.net':
+            case 'pentagram-production.imgix.net':
+            case 'prod-lippincott.imgix.net':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
