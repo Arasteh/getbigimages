@@ -73,6 +73,7 @@
 // @match        https://paragonn-cdn.nyc3.cdn.digitaloceanspaces.com/*
 // @match        https://s3.amazonaws.com/medias.site.lg2.com/*
 // @match        https://shop.matchstic.com/cdn*
+// @match        https://img.semafor.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -168,6 +169,7 @@
             case 'towhidshop.org':
             case 'wearecollins.imgix.net':
             case 'shop.matchstic.com':
+            case 'img.semafor.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
