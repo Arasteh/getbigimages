@@ -70,6 +70,8 @@
 // @match        https://www.posterfortomorrow.org/images*
 // @match        https://decodl.net/api/search-service/image/*
 // @match        https://wearecollins.imgix.net/*
+// @match        https://paragonn-cdn.nyc3.cdn.digitaloceanspaces.com/*
+// @match        https://s3.amazonaws.com/medias.site.lg2.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -139,6 +141,9 @@
                 return url.origin + url.pathname.replace(/\/GalleryT_/, '/GalleryB_');
             case 'www.posterfortomorrow.org':
                 return url.origin + url.pathname.replace(/thumbs\/entries\/\d+x\d+\//, 'entries/');
+            case 'paragonn-cdn.nyc3.cdn.digitaloceanspaces.com':
+            case 's3.amazonaws.com':
+                return url.origin + url.pathname.replace(/\/_\d+x\d+_crop_.+\//, '/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
