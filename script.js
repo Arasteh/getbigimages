@@ -78,6 +78,7 @@
 // @match        https://wp.cghnyc.com/media*
 // @match        https://dstudio.imgix.net/*
 // @match        https://images.prismic.io/*
+// @match        https://imgcdn.taaghche.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -179,6 +180,7 @@
             case 'prod-lippincott.imgix.net':
             case 'dstudio.imgix.net':
             case 'images.prismic.io':
+            case 'imgcdn.taaghche.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
