@@ -80,6 +80,7 @@
 // @match        https://images.prismic.io/*
 // @match        https://imgcdn.taaghche.com/*
 // @match        https://static.evand.net/images*
+// @match        https://media.wired.com/photos*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -116,6 +117,7 @@
             case 'www.fractal-design.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
             case 'media.newyorker.com':
+            case 'media.wired.com':
                 return url.origin + url.pathname.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
             case 'static.vecteezy.com':
                 return url.origin + url.pathname.replace(/\/large_2x\/|\/large\/|\/small_2x\/|\/small\/|\/non_2x\/|\/non\//, '/original/').replace(/\/thumbnails\//, '/previews/');
