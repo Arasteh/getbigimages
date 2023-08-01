@@ -79,6 +79,7 @@
 // @match        https://dstudio.imgix.net/*
 // @match        https://images.prismic.io/*
 // @match        https://imgcdn.taaghche.com/*
+// @match        https://static.evand.net/images*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -181,6 +182,7 @@
             case 'dstudio.imgix.net':
             case 'images.prismic.io':
             case 'imgcdn.taaghche.com':
+            case 'static.evand.net':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
