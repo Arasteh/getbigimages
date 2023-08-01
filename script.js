@@ -81,6 +81,7 @@
 // @match        https://imgcdn.taaghche.com/*
 // @match        https://static.evand.net/images*
 // @match        https://media.wired.com/photos*
+// @match        https://chorus.stimg.co/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -185,6 +186,7 @@
             case 'images.prismic.io':
             case 'imgcdn.taaghche.com':
             case 'static.evand.net':
+            case 'chorus.stimg.co':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
