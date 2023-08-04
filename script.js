@@ -82,6 +82,7 @@
 // @match        https://static.evand.net/images*
 // @match        https://media.wired.com/photos*
 // @match        https://chorus.stimg.co/*
+// @match        https://storage4.torob.com/backend-api*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -157,6 +158,8 @@
                 return url.origin + url.pathname.replace(/\/_\d+x\d+_crop_.+\//, '/');
             case 'wp.cghnyc.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
+            case 'storage4.torob.com':
+                return url.origin + url.pathname.replace(/_\/.+/, '');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
