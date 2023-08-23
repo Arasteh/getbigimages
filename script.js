@@ -83,6 +83,7 @@
 // @match        https://media.wired.com/photos*
 // @match        https://chorus.stimg.co/*
 // @match        https://storage4.torob.com/backend-api*
+// @match        https://media-cldnry.s-nbcnews.com/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -160,6 +161,8 @@
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
             case 'storage4.torob.com':
                 return url.origin + url.pathname.replace(/_\/.+/, '');
+            case 'media-cldnry.s-nbcnews.com':
+                return url.origin + url.pathname.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
