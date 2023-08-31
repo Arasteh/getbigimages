@@ -84,6 +84,7 @@
 // @match        https://chorus.stimg.co/*
 // @match        https://storage4.torob.com/backend-api*
 // @match        https://media-cldnry.s-nbcnews.com/image*
+// @match        https://pbs.twimg.com/media*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -163,6 +164,8 @@
                 return url.origin + url.pathname.replace(/_\/.+/, '');
             case 'media-cldnry.s-nbcnews.com':
                 return url.origin + url.pathname.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
+            case 'pbs.twimg.com':
+                return url.origin + url.pathname + '?format=jpg&name=orig';
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
