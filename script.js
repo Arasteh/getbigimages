@@ -31,6 +31,15 @@
 // @match        https://lh7.googleusercontent.com/*
 // @match        https://lh8.googleusercontent.com/*
 // @match        https://lh9.googleusercontent.com/*
+// @match        https://yt1.googleusercontent.com/*
+// @match        https://yt2.googleusercontent.com/*
+// @match        https://yt3.googleusercontent.com/*
+// @match        https://yt4.googleusercontent.com/*
+// @match        https://yt5.googleusercontent.com/*
+// @match        https://yt6.googleusercontent.com/*
+// @match        https://yt7.googleusercontent.com/*
+// @match        https://yt8.googleusercontent.com/*
+// @match        https://yt9.googleusercontent.com/*
 // @match        https://play-lh.googleusercontent.com/*
 // @match        https://images.unsplash.com/*
 // @match        https://thumbs.dreamstime.com/*
@@ -78,13 +87,9 @@
 // @match        https://wp.cghnyc.com/media*
 // @match        https://dstudio.imgix.net/*
 // @match        https://images.prismic.io/*
-// @match        https://imgcdn.taaghche.com/*
-// @match        https://static.evand.net/images*
-// @match        https://media.wired.com/photos*
-// @match        https://chorus.stimg.co/*
-// @match        https://storage4.torob.com/backend-api*
 // @match        https://media-cldnry.s-nbcnews.com/image*
 // @match        https://pbs.twimg.com/media*
+// @match        https://media.isna.ir/content*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -107,6 +112,7 @@
             case 'media.mehrnews.com':
             case 'img9.irna.ir':
             case 'media.cinemapress.ir':
+            case 'media.isna.ir':
                 return url.origin + url.pathname.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
                 return url.origin + url.pathname.replace(/\/(intro|medium)\//, '/');
@@ -121,7 +127,6 @@
             case 'www.fractal-design.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
             case 'media.newyorker.com':
-            case 'media.wired.com':
                 return url.origin + url.pathname.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
             case 'static.vecteezy.com':
                 return url.origin + url.pathname.replace(/\/large_2x\/|\/large\/|\/small_2x\/|\/small\/|\/non_2x\/|\/non\//, '/original/').replace(/\/thumbnails\//, '/previews/');
@@ -160,8 +165,6 @@
                 return url.origin + url.pathname.replace(/\/_\d+x\d+_crop_.+\//, '/');
             case 'wp.cghnyc.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
-            case 'storage4.torob.com':
-                return url.origin + url.pathname.replace(/_\/.+/, '');
             case 'media-cldnry.s-nbcnews.com':
                 return url.origin + url.pathname.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
             case 'pbs.twimg.com':
@@ -193,9 +196,6 @@
             case 'prod-lippincott.imgix.net':
             case 'dstudio.imgix.net':
             case 'images.prismic.io':
-            case 'imgcdn.taaghche.com':
-            case 'static.evand.net':
-            case 'chorus.stimg.co':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
@@ -208,6 +208,15 @@
             case 'lh8.googleusercontent.com':
             case 'lh9.googleusercontent.com':
             case 'play-lh.googleusercontent.com':
+            case 'yt1.googleusercontent.com':
+            case 'yt2.googleusercontent.com':
+            case 'yt3.googleusercontent.com':
+            case 'yt4.googleusercontent.com':
+            case 'yt5.googleusercontent.com':
+            case 'yt6.googleusercontent.com':
+            case 'yt7.googleusercontent.com':
+            case 'yt8.googleusercontent.com':
+            case 'yt9.googleusercontent.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
 //---decodl---
             case 'decodl.net':
