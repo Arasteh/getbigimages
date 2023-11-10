@@ -90,6 +90,7 @@
 // @match        https://media-cldnry.s-nbcnews.com/image*
 // @match        https://pbs.twimg.com/media*
 // @match        https://media.isna.ir/content*
+// @match        https://static.filmnet.ir/images*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -196,6 +197,7 @@
             case 'prod-lippincott.imgix.net':
             case 'dstudio.imgix.net':
             case 'images.prismic.io':
+            case 'static.filmnet.ir':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
