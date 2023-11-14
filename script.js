@@ -91,6 +91,8 @@
 // @match        https://pbs.twimg.com/media*
 // @match        https://media.isna.ir/content*
 // @match        https://static.filmnet.ir/images*
+// @match        https://asset.tamashakhoneh.ir/*
+// @match        https://asset.tmk.ir/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -198,6 +200,8 @@
             case 'dstudio.imgix.net':
             case 'images.prismic.io':
             case 'static.filmnet.ir':
+            case 'asset.tamashakhoneh.ir':
+            case 'asset.tmk.ir':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
