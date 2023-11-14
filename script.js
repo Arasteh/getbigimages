@@ -93,6 +93,7 @@
 // @match        https://static.filmnet.ir/images*
 // @match        https://asset.tamashakhoneh.ir/*
 // @match        https://asset.tmk.ir/*
+// @match        https://media.pitchfork.com/photos*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -172,6 +173,8 @@
                 return url.origin + url.pathname.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
             case 'pbs.twimg.com':
                 return url.origin + url.pathname + '?format=jpg&name=orig';
+            case 'media.pitchfork.com':
+                return url.origin + url.pathname.replace(/\/\d:\d\/.+,c_limit\//, '/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
