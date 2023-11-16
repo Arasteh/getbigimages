@@ -94,6 +94,7 @@
 // @match        https://asset.tamashakhoneh.ir/*
 // @match        https://asset.tmk.ir/*
 // @match        https://media.pitchfork.com/photos*
+// @match        https://i.kinja-img.com/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -175,6 +176,8 @@
                 return url.origin + url.pathname + '?format=jpg&name=orig';
             case 'media.pitchfork.com':
                 return url.origin + url.pathname.replace(/\/\d:\d\/.+,c_limit\//, '/');
+            case 'i.kinja-img.com':
+                return url.origin + url.pathname.replace(/\/upload\/.+\//, '/upload/');
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
