@@ -95,6 +95,7 @@
 // @match        https://asset.tmk.ir/*
 // @match        https://media.pitchfork.com/photos*
 // @match        https://i.kinja-img.com/image*
+// @match        https://media.musalla.ir/d*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -118,6 +119,7 @@
             case 'img9.irna.ir':
             case 'media.cinemapress.ir':
             case 'media.isna.ir':
+            case 'media.musalla.ir':
                 return url.origin + url.pathname.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
                 return url.origin + url.pathname.replace(/\/(intro|medium)\//, '/');
