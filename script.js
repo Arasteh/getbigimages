@@ -96,6 +96,7 @@
 // @match        https://media.pitchfork.com/photos*
 // @match        https://i.kinja-img.com/image*
 // @match        https://media.musalla.ir/d*
+// @match        https://static.billboard.com/files*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -180,6 +181,8 @@
                 return url.origin + url.pathname.replace(/\/\d:\d\/.+,c_limit\//, '/');
             case 'i.kinja-img.com':
                 return url.origin + url.pathname.replace(/\/upload\/.+\//, '/upload/');
+            case 'static.billboard.com':
+                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
