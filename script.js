@@ -97,6 +97,7 @@
 // @match        https://i.kinja-img.com/image*
 // @match        https://media.musalla.ir/d*
 // @match        https://static.billboard.com/files*
+// @match        https://static.cdn.asset.filimo.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -213,6 +214,7 @@
             case 'static.filmnet.ir':
             case 'asset.tamashakhoneh.ir':
             case 'asset.tmk.ir':
+            case 'static.cdn.asset.filimo.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
