@@ -98,6 +98,8 @@
 // @match        https://media.musalla.ir/d*
 // @match        https://static.billboard.com/files*
 // @match        https://static.cdn.asset.filimo.com/*
+// @match        https://www.jiomart.com/images*
+// @match        https://cdn.snapp.express/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -184,6 +186,8 @@
                 return url.origin + url.pathname.replace(/\/upload\/.+\//, '/upload/');
             case 'static.billboard.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
+            case 'cdn.snapp.express':
+                return url.origin + url.pathname.replace(/\d+x\d+\/cdn/, 'cdn')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -215,6 +219,8 @@
             case 'asset.tamashakhoneh.ir':
             case 'asset.tmk.ir':
             case 'static.cdn.asset.filimo.com':
+            case 'www.jiomart.com':
+            case 'jiomart.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
