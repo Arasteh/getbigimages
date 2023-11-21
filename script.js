@@ -10,6 +10,7 @@
 // @match        https://ipm.ssaa.ir/Storage*
 // @match        https://m.media-amazon.com/images/*
 // @match        https://images-eu.ssl-images-amazon.com/images/*
+// @match        https://images-na.ssl-images-amazon.com/images/*
 // @match        https://www.filimo.com/shot/wp-content/uploads/*
 // @match        https://img.freepik.com/free-*
 // @match        https://img.freepik.com/premium-*
@@ -114,6 +115,7 @@
                 return url.toString();
             case 'm.media-amazon.com':
             case 'images-eu.ssl-images-amazon.com':
+            case 'images-na.ssl-images-amazon.com':
                 return url.origin + url.pathname.replace(/(@+)[^@]+\.|\._.+_\./, '$1.');
             case 'img.freepik.com':
                 return url.origin + url.pathname + '?w=2000';
