@@ -100,6 +100,7 @@
 // @match        https://static.cdn.asset.filimo.com/*
 // @match        https://www.jiomart.com/images*
 // @match        https://cdn.snapp.express/*
+// @match        https://www.datocms-assets.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -221,6 +222,7 @@
             case 'static.cdn.asset.filimo.com':
             case 'www.jiomart.com':
             case 'jiomart.com':
+            case 'www.datocms-assets.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
