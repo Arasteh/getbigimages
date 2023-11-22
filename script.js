@@ -104,6 +104,7 @@
 // @match        https://www.datocms-assets.com/*
 // @match        https://sc04.alicdn.com/*
 // @match        https://media.wnyc.org/i/*
+// @match        https://i.etsystatic.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -197,6 +198,8 @@
                 return url.origin + url.pathname.replace(/_\d+x\d+\..+/, '')
             case 'media.wnyc.org':
                 return url.origin + url.pathname.replace(/i\/\d+\//, 'i/8000/')
+            case 'i.etsystatic.com':
+                return url.origin + url.pathname.replace(/il_.+xN\.|il_.+x\d+\./, 'il_fullxfull.')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
