@@ -103,6 +103,7 @@
 // @match        https://cdn.snapp.express/*
 // @match        https://www.datocms-assets.com/*
 // @match        https://sc04.alicdn.com/*
+// @match        https://media.wnyc.org/i/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -194,6 +195,8 @@
                 return url.origin + url.pathname.replace(/\d+x\d+\/cdn/, 'cdn')
             case 'sc04.alicdn.com':
                 return url.origin + url.pathname.replace(/_\d+x\d+\..+/, '')
+            case 'media.wnyc.org':
+                return url.origin + url.pathname.replace(/i\/\d+\//, 'i/8000/')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
