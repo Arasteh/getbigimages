@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
-// @namespace    http://tampermonkey.net/
+// @namespace    https://arasteh.studio/get-big-images/
 // @version      0.1
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
@@ -105,6 +105,15 @@
 // @match        https://sc04.alicdn.com/*
 // @match        https://media.wnyc.org/i/*
 // @match        https://i.etsystatic.com/*
+// @match        https://ehfel.eurohandball.com/*
+// @match        https://ehfec.eurohandball.com/*
+// @match        https://ehfcl.eurohandball.com/*
+// @match        https://www.eurohandball.com/*
+// @match        https://yac.eurohandball.com/*
+// @match        https://ehfeuro.eurohandball.com/*
+// @match        https://shop.nufc.co.uk/cdn*
+// @match        https://static.neshanmap.ir/*
+// @match        https://cdn.shenoto.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -200,6 +209,12 @@
                 return url.origin + url.pathname.replace(/i\/\d+\//, 'i/8000/')
             case 'i.etsystatic.com':
                 return url.origin + url.pathname.replace(/il_.+xN\.|il_.+x\d+\./, 'il_fullxfull.')
+            case 'shop.nufc.co.uk':
+                return url.origin + url.pathname.replace(/_\d+x./, '.')
+            case 'static.neshanmap.ir':
+                return url.origin + url.pathname.replace(/_Thumbnail--/, '--')
+            case 'cdn.shenoto.com':
+                return url.origin + url.pathname.replace(/\/\d+.jpg/, '/original.jpg')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -234,6 +249,12 @@
             case 'www.jiomart.com':
             case 'jiomart.com':
             case 'www.datocms-assets.com':
+            case 'ehfel.eurohandball.com':
+            case 'ehfec.eurohandball.com':
+            case 'ehfcl.eurohandball.com':
+            case 'www.eurohandball.com':
+            case 'yac.eurohandball.com':
+            case 'ehfeuro.eurohandball.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
