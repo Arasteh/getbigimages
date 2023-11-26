@@ -114,6 +114,9 @@
 // @match        https://shop.nufc.co.uk/cdn*
 // @match        https://static.neshanmap.ir/*
 // @match        https://cdn.shenoto.com/*
+// @match        https://yt1.ggpht.com/*
+// @match        https://yt2.ggpht.com/*
+// @match        https://yt3.ggpht.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -276,6 +279,9 @@
             case 'yt7.googleusercontent.com':
             case 'yt8.googleusercontent.com':
             case 'yt9.googleusercontent.com':
+            case 'yt1.ggpht.com':
+            case 'yt2.ggpht.com':
+            case 'yt3.ggpht.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
 //---decodl---
             case 'decodl.net':
