@@ -117,6 +117,7 @@
 // @match        https://yt1.ggpht.com/*
 // @match        https://yt2.ggpht.com/*
 // @match        https://yt3.ggpht.com/*
+// @match        https://static.namava.ir/Content*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -258,6 +259,7 @@
             case 'www.eurohandball.com':
             case 'yac.eurohandball.com':
             case 'ehfeuro.eurohandball.com':
+            case 'static.namava.ir':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
