@@ -122,6 +122,9 @@
 // @match        https://static.digiato.com/*
 // @match        https://upload.wikimedia.org/*
 // @match        https://media.wired.com/*
+// @match        https://media.cnn.com/*
+// @match        https://megaphone.imgix.net/*
+// @match        https://i.natgeofe.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -257,6 +260,7 @@
             case 'pentagram-production.imgix.net':
             case 'prod-lippincott.imgix.net':
             case 'dstudio.imgix.net':
+            case 'megaphone.imgix.net':
             case 'images.prismic.io':
             case 'static.filmnet.ir':
             case 'asset.tamashakhoneh.ir':
@@ -272,6 +276,8 @@
             case 'yac.eurohandball.com':
             case 'ehfeuro.eurohandball.com':
             case 'static.namava.ir':
+            case 'i.natgeofe.com':
+            //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---Google---
             case 'lh1.googleusercontent.com':
