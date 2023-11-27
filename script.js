@@ -118,6 +118,7 @@
 // @match        https://yt2.ggpht.com/*
 // @match        https://yt3.ggpht.com/*
 // @match        https://static.namava.ir/Content*
+// @match        https://static.esam.ir/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -219,6 +220,8 @@
                 return url.origin + url.pathname.replace(/_Thumbnail--/, '--')
             case 'cdn.shenoto.com':
                 return url.origin + url.pathname.replace(/\/\d+.jpg/, '/original.jpg')
+            case 'static.esam.ir':
+                return url.origin + url.pathname.replace(/_thsm.|_th./, '.')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
