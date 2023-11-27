@@ -119,6 +119,8 @@
 // @match        https://yt3.ggpht.com/*
 // @match        https://static.namava.ir/Content*
 // @match        https://static.esam.ir/*
+// @match        https://static.digiato.com/*
+// @match        https://upload.wikimedia.org/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -222,6 +224,10 @@
                 return url.origin + url.pathname.replace(/\/\d+.jpg/, '/original.jpg')
             case 'static.esam.ir':
                 return url.origin + url.pathname.replace(/_thsm.|_th./, '.')
+            case 'static.digiato.com':
+                return url.origin + url.pathname.replace(/.jpg.webp/, '.jpg')
+            case 'upload.wikimedia.org':
+                return url.origin + url.pathname.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -240,6 +246,7 @@
             case 'images.squarespace-cdn.com':
             case 'yassavoli.com':
             case 'nyt.com':
+            case 'static01.nyt.com':
             case 'images.theconversation.com':
             case 'towhidshop.org':
             case 'shop.matchstic.com':
