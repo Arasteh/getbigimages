@@ -121,6 +121,7 @@
 // @match        https://static.esam.ir/*
 // @match        https://static.digiato.com/*
 // @match        https://upload.wikimedia.org/*
+// @match        https://media.wired.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -203,6 +204,7 @@
             case 'pbs.twimg.com':
                 return url.origin + url.pathname + '?format=jpg&name=orig';
             case 'media.pitchfork.com':
+            case 'media.wired.com':
                 return url.origin + url.pathname.replace(/\/\d:\d\/.+,c_limit\//, '/');
             case 'i.kinja-img.com':
                 return url.origin + url.pathname.replace(/\/upload\/.+\//, '/upload/');
