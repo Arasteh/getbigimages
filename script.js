@@ -164,7 +164,7 @@
             case 'images.vestiairecollective.com':
                 return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
             case 's.cafebazaar.ir':
-                return url.origin + url.pathname + '?x-img=v1/format,type_png,lossless_true';
+                return url.origin + url.pathname.replace(/_128x128./, '_512x512.') + '?x-img=v1/format,type_png,lossless_true';
             case 'media.farsnews.ir':
                 return url.origin + url.pathname.replace(/_PhotoX\./, '_PhotoT.');
             case 'static.digiato.com':
