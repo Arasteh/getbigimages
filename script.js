@@ -125,6 +125,7 @@
 // @match        https://media.cnn.com/*
 // @match        https://megaphone.imgix.net/*
 // @match        https://i.natgeofe.com/*
+// @match        https://www.nps.gov/common*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -277,6 +278,7 @@
             case 'ehfeuro.eurohandball.com':
             case 'static.namava.ir':
             case 'i.natgeofe.com':
+            case 'www.nps.gov':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---Google---
