@@ -141,102 +141,102 @@
             case 'm.media-amazon.com':
             case 'images-eu.ssl-images-amazon.com':
             case 'images-na.ssl-images-amazon.com':
-                return url.origin + url.pathname.replace(/(@+)[^@]+\.|\._.+_\./, '$1.');
+                return url.href.replace(/(@+)[^@]+\.|\._.+_\./, '$1.');
             case 'img.freepik.com':
                 return url.origin + url.pathname + '?w=2000';
             case 'statics.basalam.com':
-                return url.origin + url.pathname.replace(/_.+\.jpg/, '');
+                return url.href.replace(/_.+\.jpg/, '');
             case 'cdn.isna.ir':
             case 'media.mehrnews.com':
             case 'img9.irna.ir':
             case 'media.cinemapress.ir':
             case 'media.isna.ir':
             case 'media.musalla.ir':
-                return url.origin + url.pathname.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
+                return url.href.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
-                return url.origin + url.pathname.replace(/\/(intro|medium)\//, '/');
+                return url.href.replace(/\/(intro|medium)\//, '/');
             case 'idc0-cdn0.khamenei.ir':
-                return url.origin + url.pathname.replace(/\/[AC]\//, '/B/');
+                return url.href.replace(/\/[AC]\//, '/B/');
             case 'images.metmuseum.org':
-                return url.origin + url.pathname.replace(/\/web-additional\//, '/original/');
+                return url.href.replace(/\/web-additional\//, '/original/');
             case 'thumbs.dreamstime.com':
-                return url.origin + url.pathname.replace(/\/[bsmtxl]\//, '/z/');
+                return url.href.replace(/\/[bsmtxl]\//, '/z/');
             case 'news.ut.ac.ir':
-                return url.origin + url.pathname.replace(/\/gallery-thumb\//, '/gallery-big/');
+                return url.href.replace(/\/gallery-thumb\//, '/gallery-big/');
             case 'www.fractal-design.com':
-                return url.origin + url.pathname.replace(/-\d+x\d+\./, '.');
+                return url.href.replace(/-\d+x\d+\./, '.');
             case 'media.newyorker.com':
-                return url.origin + url.pathname.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
+                return url.href.replace(/\/master\/w_.+\/|\/\d+:\d+\/w_.+\//, '/');
             case 'static.vecteezy.com':
-                return url.origin + url.pathname.replace(/\/large_2x\/|\/large\/|\/small_2x\/|\/small\/|\/non_2x\/|\/non\//, '/original/').replace(/\/thumbnails\//, '/previews/');
+                return url.href.replace(/\/large_2x\/|\/large\/|\/small_2x\/|\/small\/|\/non_2x\/|\/non\//, '/original/').replace(/\/thumbnails\//, '/previews/');
             case 'images.vestiairecollective.com':
-                return url.origin + url.pathname.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
+                return url.href.replace(/\/cdn-cgi\/image\/w=.+\/produit\//, '/produit/');
             case 's.cafebazaar.ir':
                 return url.origin + url.pathname.replace(/_128x128./, '_512x512.') + '?x-img=v1/format,type_png,lossless_true';
             case 'media.farsnews.ir':
-                return url.origin + url.pathname.replace(/_PhotoX\./, '_PhotoT.');
+                return url.href.replace(/_PhotoX\./, '_PhotoT.');
             case 'static.digiato.com':
-                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
+                return url.href.replace(/-\d+x\d+\.|\-scaled\./, '.');
             case 'cdn.dribbble.com':
-                return url.origin + url.pathname.replace(/\/normal\//, '/original/');
+                return url.href.replace(/\/normal\//, '/original/');
             case 'smallimg.pngkey.com':
                 return url.origin.replace(/smallimg.pngkey/, 'pngkey') + url.pathname.replace(/\/png\/small\//, '/png/full/');
             case 'static.toiimg.com':
-                return url.origin + url.pathname.replace(/,.+\./, '.').replace(/\/thumb\//, '/photo/');
+                return url.href.replace(/,.+\./, '.').replace(/\/thumb\//, '/photo/');
             case 'cdnfa.com':
-                return url.origin + url.pathname.replace(/\/thumb\/|\/normal\//, '/');
+                return url.href.replace(/\/thumb\/|\/normal\//, '/');
             case 'idebook.ir':
-                return url.origin + url.pathname.replace(/\/small\/small_/, '/');
+                return url.href.replace(/\/small\/small_/, '/');
             case 'images.adsttc.com':
-                return url.origin + url.pathname.replace(/\/(thumb|small|medium)_/, '/large_');
+                return url.href.replace(/\/(thumb|small|medium)_/, '/large_');
             case 'shutterstock.com':
                 return url.origin + url.pathname.replace(/\/image-vector\//, '/z/').replace(/-600w-|-290w-/, '-');
             case 'cdn.theatlantic.com':
-                return url.origin + url.pathname.replace(/thumbor\/.+\/media\//, 'media/');
+                return url.href.replace(/thumbor\/.+\/media\//, 'media/');
             case 'mediaproxy.salon.com':
                 return url.origin.replace(/proxy/, '') + url.pathname.replace(/width\/\d+\/https:\/\/media.salon.com\//, '');
             case 'galleryinfo.ir':
-                return url.origin + url.pathname.replace(/\/GalleryT_/, '/GalleryB_');
+                return url.href.replace(/\/GalleryT_/, '/GalleryB_');
             case 'www.posterfortomorrow.org':
-                return url.origin + url.pathname.replace(/thumbs\/entries\/\d+x\d+\//, 'entries/');
+                return url.href.replace(/thumbs\/entries\/\d+x\d+\//, 'entries/');
             case 'paragonn-cdn.nyc3.cdn.digitaloceanspaces.com':
             case 's3.amazonaws.com':
-                return url.origin + url.pathname.replace(/\/_\d+x\d+_crop_.+\//, '/');
+                return url.href.replace(/\/_\d+x\d+_crop_.+\//, '/');
             case 'wp.cghnyc.com':
-                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.');
+                return url.href.replace(/-\d+x\d+\.|\-scaled\./, '.');
             case 'media-cldnry.s-nbcnews.com':
-                return url.origin + url.pathname.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
+                return url.href.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
             case 'pbs.twimg.com':
                 return url.origin + url.pathname + '?format=jpg&name=orig';
             case 'media.pitchfork.com':
             case 'media.wired.com':
-                return url.origin + url.pathname.replace(/\/\d:\d\/.+,c_limit\//, '/');
+                return url.href.replace(/\/\d:\d\/.+,c_limit\//, '/');
             case 'i.kinja-img.com':
-                return url.origin + url.pathname.replace(/\/upload\/.+\//, '/upload/');
+                return url.href.replace(/\/upload\/.+\//, '/upload/');
             case 'static.billboard.com':
-                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
+                return url.href.replace(/-\d+x\d+\.|\-scaled\./, '.')
             case 'cdn.snapp.express':
-                return url.origin + url.pathname.replace(/\d+x\d+\/cdn/, 'cdn')
+                return url.href.replace(/\d+x\d+\/cdn/, 'cdn')
             case 'sc04.alicdn.com':
-                return url.origin + url.pathname.replace(/_\d+x\d+\..+/, '')
+                return url.href.replace(/_\d+x\d+\..+/, '')
             case 'media.wnyc.org':
-                return url.origin + url.pathname.replace(/i\/\d+\//, 'i/8000/')
+                return url.href.replace(/i\/\d+\//, 'i/8000/')
             case 'i.etsystatic.com':
-                return url.origin + url.pathname.replace(/il_.+xN\.|il_.+x\d+\./, 'il_fullxfull.')
+                return url.href.replace(/il_.+xN\.|il_.+x\d+\./, 'il_fullxfull.')
             case 'shop.nufc.co.uk':
-                return url.origin + url.pathname.replace(/_\d+x./, '.')
+                return url.href.replace(/_\d+x./, '.')
             case 'static.neshanmap.ir':
-                return url.origin + url.pathname.replace(/_Thumbnail--/, '--')
+                return url.href.replace(/_Thumbnail--/, '--')
             case 'cdn.shenoto.com':
-                return url.origin + url.pathname.replace(/\/\d+.jpg/, '/original.jpg')
+                return url.href.replace(/\/\d+.jpg/, '/original.jpg')
             case 'static.esam.ir':
-                return url.origin + url.pathname.replace(/_thsm.|_th./, '.')
+                return url.href.replace(/_thsm.|_th./, '.')
             case 'static.digiato.com':
-                return url.origin + url.pathname.replace(/.jpg.webp/, '.jpg')
+                return url.href.replace(/.jpg.webp/, '.jpg')
             case 'upload.wikimedia.org':
-                return url.origin + url.pathname.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
+                return url.href.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
             case 'ids.si.edu':
-                return url.origin + url.pathname + url.search.replace(/max=500/, '')
+                return url.href.replace(/max=\d+/, '')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
