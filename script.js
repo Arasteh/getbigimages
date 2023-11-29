@@ -126,6 +126,7 @@
 // @match        https://megaphone.imgix.net/*
 // @match        https://i.natgeofe.com/*
 // @match        https://www.nps.gov/common*
+// @match        https://ids.si.edu/ids*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -234,6 +235,8 @@
                 return url.origin + url.pathname.replace(/.jpg.webp/, '.jpg')
             case 'upload.wikimedia.org':
                 return url.origin + url.pathname.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
+            case 'ids.si.edu':
+                return url.origin + url.pathname + url.search.replace(/max=500/, '')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
