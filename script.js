@@ -114,6 +114,7 @@
 // @match        https://shop.nufc.co.uk/cdn*
 // @match        https://static.neshanmap.ir/*
 // @match        https://cdn.shenoto.com/*
+// @match        https://cdn-arch.shenoto.com/*
 // @match        https://yt1.ggpht.com/*
 // @match        https://yt2.ggpht.com/*
 // @match        https://yt3.ggpht.com/*
@@ -127,6 +128,10 @@
 // @match        https://i.natgeofe.com/*
 // @match        https://www.nps.gov/common*
 // @match        https://ids.si.edu/ids*
+// @match        https://render.myfonts.net/fonts*
+// @match        https://sig.monotype.com/render*
+// @match        https://saffron.imgix.net/*
+// @match        https://live.staticflickr.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -228,6 +233,7 @@
             case 'static.neshanmap.ir':
                 return url.href.replace(/_Thumbnail--/, '--')
             case 'cdn.shenoto.com':
+            case 'cdn-arch.shenoto.com':
                 return url.href.replace(/\/\d+.jpg/, '/original.jpg')
             case 'static.esam.ir':
                 return url.href.replace(/_thsm.|_th./, '.')
@@ -237,6 +243,13 @@
                 return url.href.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
             case 'ids.si.edu':
                 return url.href.replace(/max=\d+/, '')
+            case 'render.myfonts.net':
+            case 'sig.monotype.com':
+                return url.href.replace(/&rs=\d+&/, '&rs=256&').replace(/&w=\d+&/, '&w=3000&')
+            case 'live.staticflickr.com':
+                return url.origin + url.pathname.replace(/_[c|m|n|q|s|t|w|z]./, '_b.');
+            //case 'pbs.twimg.com/profile_images':
+            //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
@@ -265,6 +278,7 @@
             case 'prod-lippincott.imgix.net':
             case 'dstudio.imgix.net':
             case 'megaphone.imgix.net':
+            case 'saffron.imgix.net':
             case 'images.prismic.io':
             case 'static.filmnet.ir':
             case 'asset.tamashakhoneh.ir':
