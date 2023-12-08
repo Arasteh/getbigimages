@@ -132,6 +132,7 @@
 // @match        https://sig.monotype.com/render*
 // @match        https://saffron.imgix.net/*
 // @match        https://live.staticflickr.com/*
+// @match        https://media.discordapp.net/attachments*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -296,6 +297,7 @@
             case 'static.namava.ir':
             case 'i.natgeofe.com':
             case 'www.nps.gov':
+            case 'media.discordapp.net':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---Google---
