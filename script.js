@@ -133,6 +133,7 @@
 // @match        https://saffron.imgix.net/*
 // @match        https://live.staticflickr.com/*
 // @match        https://media.discordapp.net/attachments*
+// @match        https://assets1.cbsnewsstatic.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -246,9 +247,11 @@
                 return url.href.replace(/max=\d+/, '')
             case 'render.myfonts.net':
             case 'sig.monotype.com':
-                return url.href.replace(/&rs=\d+&/, '&rs=256&').replace(/&w=\d+&/, '&w=3000&')
+                return url.href.replace(/&rs=\d+&/, '&rs=256&').replace(/&w=\d+&/, '&w=4000&')
             case 'live.staticflickr.com':
                 return url.origin + url.pathname.replace(/_[c|m|n|q|s|t|w|z]./, '_b.');
+            case 'assets1.cbsnewsstatic.com':
+                return url.href.replace(/\/thumbnail\/\d+x\d+\//, '/')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
