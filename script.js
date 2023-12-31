@@ -134,6 +134,7 @@
 // @match        https://live.staticflickr.com/*
 // @match        https://media.discordapp.net/attachments*
 // @match        https://assets1.cbsnewsstatic.com/*
+// @match        https://assets.the-afc.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -301,6 +302,7 @@
             case 'i.natgeofe.com':
             case 'www.nps.gov':
             case 'media.discordapp.net':
+            case 'assets.the-afc.com':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---Google---
