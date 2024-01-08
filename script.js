@@ -135,6 +135,8 @@
 // @match        https://media.discordapp.net/attachments*
 // @match        https://assets1.cbsnewsstatic.com/*
 // @match        https://assets.the-afc.com/*
+// @match        https://sothebys-com.brightspotcdn.com/*
+// @match        https://fotografia.islamoriente.com/sites*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -253,6 +255,10 @@
                 return url.origin + url.pathname.replace(/_[c|m|n|q|s|t|w|z]./, '_b.');
             case 'assets1.cbsnewsstatic.com':
                 return url.href.replace(/\/thumbnail\/\d+x\d+\//, '/')
+            case 'sothebys-com.brightspotcdn.com':
+                return unescape(url.search.replace(/\?url=http%3A%2F%2F/, ''))
+            case 'fotografia.islamoriente.com':
+                return url.href.replace(/\/styles\/236_all\/public\//, '/')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
