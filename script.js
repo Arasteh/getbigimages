@@ -137,6 +137,7 @@
 // @match        https://assets.the-afc.com/*
 // @match        https://sothebys-com.brightspotcdn.com/*
 // @match        https://fotografia.islamoriente.com/sites*
+// @match        https://media.khabaronline.ir/d*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -162,6 +163,7 @@
             case 'media.cinemapress.ir':
             case 'media.isna.ir':
             case 'media.musalla.ir':
+            case 'media.khabaronline.ir':
                 return url.href.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
                 return url.href.replace(/\/(intro|medium)\//, '/');
