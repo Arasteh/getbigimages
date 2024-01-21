@@ -138,6 +138,7 @@
 // @match        https://sothebys-com.brightspotcdn.com/*
 // @match        https://fotografia.islamoriente.com/sites*
 // @match        https://media.khabaronline.ir/d*
+// @match        https://ketabnak.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -261,6 +262,8 @@
                 return unescape(url.search.replace(/\?url=http%3A%2F%2F/, ''))
             case 'fotografia.islamoriente.com':
                 return url.href.replace(/\/styles\/236_all\/public\//, '/')
+            case 'ketabnak.com':
+                return url.href.replace(/\/thumb\/\d+x\d+\//, '/')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
