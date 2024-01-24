@@ -209,7 +209,7 @@
             case 'mediaproxy.salon.com':
                 return url.origin.replace(/proxy/, '') + url.pathname.replace(/width\/\d+\/https:\/\/media.salon.com\//, '');
             case 'galleryinfo.ir':
-                return url.href.replace(/\/GalleryT_/, '/GalleryB_');
+                return url.href.replace(/\/GalleryT_/, '/GalleryB_').replace(/(Event_\d+)(\.jpg|\.png)/, '$1_Big$2');
             case 'www.posterfortomorrow.org':
                 return url.href.replace(/thumbs\/entries\/\d+x\d+\//, 'entries/');
             case 'paragonn-cdn.nyc3.cdn.digitaloceanspaces.com':
