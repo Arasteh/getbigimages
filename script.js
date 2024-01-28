@@ -187,7 +187,7 @@
             case 's.cafebazaar.ir':
                 return url.origin + url.pathname.replace(/_128x128./, '_512x512.') + '?x-img=v1/format,type_png,lossless_true';
             case 'media.farsnews.ir':
-                return url.href.replace(/_PhotoX\./, '_PhotoT.');
+                return url.href.replace(/_PhotoX\.|_PhotoL\./, '_PhotoT.');
             case 'static.digiato.com':
                 return url.href.replace(/-\d+x\d+\.|\-scaled\./, '.');
             case 'cdn.dribbble.com':
