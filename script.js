@@ -139,6 +139,7 @@
 // @match        https://fotografia.islamoriente.com/sites*
 // @match        https://media.khabaronline.ir/d*
 // @match        https://ketabnak.com/*
+// @match        https://i.insider.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -314,6 +315,7 @@
             case 'www.nps.gov':
             case 'media.discordapp.net':
             case 'assets.the-afc.com':
+            case 'i.insider.com':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---Google---
