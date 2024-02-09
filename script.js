@@ -140,6 +140,7 @@
 // @match        https://media.khabaronline.ir/d*
 // @match        https://ketabnak.com/*
 // @match        https://i.insider.com/*
+// @match        https://agakhanmuseum.org/dataset-images*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -265,6 +266,8 @@
                 return url.href.replace(/\/styles\/236_all\/public\//, '/')
             case 'ketabnak.com':
                 return url.href.replace(/\/thumb\/\d+x\d+\//, '/')
+            case 'agakhanmuseum.org':
+                return url.href.replace(/\/500$/, '')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
