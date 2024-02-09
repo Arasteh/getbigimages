@@ -136,6 +136,7 @@
 // @match        https://assets1.cbsnewsstatic.com/*
 // @match        https://assets.the-afc.com/*
 // @match        https://sothebys-com.brightspotcdn.com/*
+// @match        https://sothebys-md.brightspotcdn.com/*
 // @match        https://fotografia.islamoriente.com/sites*
 // @match        https://media.khabaronline.ir/d*
 // @match        https://ketabnak.com/*
@@ -261,7 +262,8 @@
             case 'assets1.cbsnewsstatic.com':
                 return url.href.replace(/\/thumbnail\/\d+x\d+\//, '/')
             case 'sothebys-com.brightspotcdn.com':
-                return unescape(url.search.replace(/\?url=http%3A%2F%2F/, ''))
+            case 'sothebys-md.brightspotcdn.com':
+                return unescape(url.search.replace(/\?url=/, ''))
             case 'fotografia.islamoriente.com':
                 return url.href.replace(/\/styles\/236_all\/public\//, '/')
             case 'ketabnak.com':
