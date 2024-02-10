@@ -142,6 +142,7 @@
 // @match        https://ketabnak.com/*
 // @match        https://i.insider.com/*
 // @match        https://agakhanmuseum.org/dataset-images*
+// @match        https://media.atiyeonline.ir/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -168,6 +169,7 @@
             case 'media.isna.ir':
             case 'media.musalla.ir':
             case 'media.khabaronline.ir':
+            case 'media.atiyeonline.ir':
                 return url.href.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
             case 'arthibition.net':
                 return url.href.replace(/\/(intro|medium)\//, '/');
