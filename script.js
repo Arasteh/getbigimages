@@ -143,6 +143,7 @@
 // @match        https://i.insider.com/*
 // @match        https://agakhanmuseum.org/dataset-images*
 // @match        https://media.atiyeonline.ir/*
+// @match        https://thesoundofvinyl.com/cdn*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -323,6 +324,7 @@
             case 'media.discordapp.net':
             case 'assets.the-afc.com':
             case 'i.insider.com':
+            case 'thesoundofvinyl.com':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---Google---
