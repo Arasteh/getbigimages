@@ -142,6 +142,7 @@
 // @match        https://ketabnak.com/*
 // @match        https://i.insider.com/*
 // @match        https://agakhanmuseum.org/dataset-images*
+// @match        https://www.agakhanmuseum.org/dataset-images*
 // @match        https://media.atiyeonline.ir/*
 // @match        https://thesoundofvinyl.com/cdn*
 // @include      /^https?://.*\/wp-content\/.*$/
@@ -272,6 +273,7 @@
             case 'ketabnak.com':
                 return url.href.replace(/\/thumb\/\d+x\d+\//, '/')
             case 'agakhanmuseum.org':
+            case 'www.agakhanmuseum.org':
                 return url.href.replace(/\/500$/, '')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
