@@ -145,6 +145,7 @@
 // @match        https://www.agakhanmuseum.org/dataset-images*
 // @match        https://media.atiyeonline.ir/*
 // @match        https://thesoundofvinyl.com/cdn*
+// @match        https://cdn.mos.cms.futurecdn.net/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -275,6 +276,8 @@
             case 'agakhanmuseum.org':
             case 'www.agakhanmuseum.org':
                 return url.href.replace(/\/500$/, '')
+            case 'cdn.mos.cms.futurecdn.net':
+                return url.href.replace(/-\d+-\d+.|-\d+./, '.').replace(/.webp$/, '')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
