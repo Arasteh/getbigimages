@@ -146,6 +146,7 @@
 // @match        https://media.atiyeonline.ir/*
 // @match        https://thesoundofvinyl.com/cdn*
 // @match        https://cdn.mos.cms.futurecdn.net/*
+// @match        https://media.tehrantimes.com/d*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -173,7 +174,8 @@
             case 'media.musalla.ir':
             case 'media.khabaronline.ir':
             case 'media.atiyeonline.ir':
-                return url.href.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1');
+            case 'media.tehrantimes.com':
+                return url.href.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1').replace(/\/[1-3]$/, '/4');
             case 'arthibition.net':
                 return url.href.replace(/\/(intro|medium)\//, '/');
             case 'idc0-cdn0.khamenei.ir':
@@ -278,6 +280,8 @@
                 return url.href.replace(/\/500$/, '')
             case 'cdn.mos.cms.futurecdn.net':
                 return url.href.replace(/-\d+-\d+.|-\d+./, '.').replace(/.webp$/, '')
+            //case 'www.mizanonline.ir':
+            //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---App Store---
