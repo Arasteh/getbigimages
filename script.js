@@ -147,6 +147,7 @@
 // @match        https://thesoundofvinyl.com/cdn*
 // @match        https://cdn.mos.cms.futurecdn.net/*
 // @match        https://media.tehrantimes.com/d*
+// @match        https://image.invaluable.com/housePhotos*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -280,6 +281,8 @@
                 return url.href.replace(/\/500$/, '')
             case 'cdn.mos.cms.futurecdn.net':
                 return url.href.replace(/-\d+-\d+.|-\d+./, '.').replace(/.webp$/, '')
+            case 'image.invaluable.com':
+                return url.href.replace(/(\d).jpg$/, '$1_original.jpg')
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
