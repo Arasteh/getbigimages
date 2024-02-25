@@ -148,6 +148,7 @@
 // @match        https://cdn.mos.cms.futurecdn.net/*
 // @match        https://media.tehrantimes.com/d*
 // @match        https://image.invaluable.com/housePhotos*
+// @match        https://img.tebyan.net/big*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -287,13 +288,13 @@
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
             //    return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
-//---App Store---
+//---APP STORE---
             case 'is1-ssl.mzstatic.com':
             case 'is2-ssl.mzstatic.com':
             case 'is3-ssl.mzstatic.com':
             case 'is4-ssl.mzstatic.com':
                 return url.origin + url.pathname.replace(/\.(png|jpg)\/\d+x0w.webp/, '.$1/8000x0w.$1');
-//---Trim everything after '?'---
+//---TRIM EVERYTHING AFTER '?'---
             case 'dkstatics-public.digikala.com':
             case 'www.christies.com':
             case 'ipm.ssaa.ir':
@@ -337,9 +338,10 @@
             case 'assets.the-afc.com':
             case 'i.insider.com':
             case 'thesoundofvinyl.com':
+            case 'img.tebyan.net':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
-//---Google---
+//---GOOGLE---
             case 'lh1.googleusercontent.com':
             case 'lh2.googleusercontent.com':
             case 'lh3.googleusercontent.com':
@@ -363,7 +365,7 @@
             case 'yt2.ggpht.com':
             case 'yt3.ggpht.com':
                 return url.origin + url.pathname.replace(/=.+/, '=s8000');
-//---decodl---
+//---DECODL---
             case 'decodl.net':
                 const pathname = decodeURIComponent(url.pathname);
                 if (pathname.includes('.shutterstock.com'))
@@ -373,7 +375,7 @@
                 return pathname.includes('/api/search-service/image/')
                      ? normalizer(new URL(pathname.split('/api/search-service/image/')[1]))
                      : url.toString();
-//---Wordpress sites---
+//---WORDPRESS SITES---
             default:
                 return url.pathname.includes('/wp-content/')
                      ? url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
