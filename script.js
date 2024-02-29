@@ -149,6 +149,7 @@
 // @match        https://media.tehrantimes.com/d*
 // @match        https://image.invaluable.com/housePhotos*
 // @match        https://img.tebyan.net/big*
+// @match        https://media.chtn.ir/d*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -177,6 +178,7 @@
             case 'media.khabaronline.ir':
             case 'media.atiyeonline.ir':
             case 'media.tehrantimes.com':
+            case 'media.chtn.ir':
                 return url.href.replace(/\/[1-3]\/([^\/]+$)/, '/4/$1').replace(/\/[1-3]$/, '/4');
             case 'arthibition.net':
                 return url.href.replace(/\/(intro|medium)\//, '/');
