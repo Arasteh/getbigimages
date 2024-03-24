@@ -150,6 +150,7 @@
 // @match        https://image.invaluable.com/housePhotos*
 // @match        https://img.tebyan.net/big*
 // @match        https://media.chtn.ir/d*
+// @match        https://img1.bonhams.com/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -286,6 +287,8 @@
                 return url.href.replace(/-\d+-\d+.|-\d+./, '.').replace(/.webp$/, '')
             case 'image.invaluable.com':
                 return url.href.replace(/(\d).jpg$/, '$1_original.jpg')
+            case 'img1.bonhams.com':
+                return url.href.replace(/(.jpg).+$/, '$1')
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
