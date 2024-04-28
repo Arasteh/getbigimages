@@ -152,6 +152,7 @@
 // @match        https://media.chtn.ir/d*
 // @match        https://img1.bonhams.com/image*
 // @match        https://i.ebayimg.com/images*
+// @match        https://www.bonhams.com/_next*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -292,6 +293,8 @@
                 return url.href.replace(/(.jpg).+$/, '$1')
             case 'i.ebayimg.com':
                 return url.href.replace(/-l\d+\./, '-l1600.')
+            case 'www.bonhams.com':
+                return unescape(url.search.replace(/\?url=/, ''))
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
