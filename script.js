@@ -153,6 +153,8 @@
 // @match        https://img1.bonhams.com/image*
 // @match        https://i.ebayimg.com/images*
 // @match        https://www.bonhams.com/_next*
+// @match        https://pbs.twimg.com/profile_images*
+// @match        https://okdiario.com/img*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -295,6 +297,8 @@
                 return url.href.replace(/-l\d+\./, '-l1600.')
             case 'www.bonhams.com':
                 return unescape(url.search.replace(/\?url=/, ''))
+            case 'okdiario.com':
+                return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
