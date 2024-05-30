@@ -155,6 +155,7 @@
 // @match        https://www.bonhams.com/_next*
 // @match        https://pbs.twimg.com/profile_images*
 // @match        https://okdiario.com/img*
+// @match        https://www.reuters.com/resizer*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -299,6 +300,8 @@
                 return unescape(url.search.replace(/\?url=/, ''))
             case 'okdiario.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
+            case 'www.reuters.com':
+                return url.href.replace(/width=\d+/, '').replace(/quality=\d+/, '')
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
