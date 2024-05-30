@@ -156,6 +156,7 @@
 // @match        https://pbs.twimg.com/profile_images*
 // @match        https://okdiario.com/img*
 // @match        https://www.reuters.com/resizer*
+// @match        https://media.npr.org/assets*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -357,6 +358,7 @@
             case 'i.insider.com':
             case 'thesoundofvinyl.com':
             case 'img.tebyan.net':
+            case 'media.npr.org':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---GOOGLE---
