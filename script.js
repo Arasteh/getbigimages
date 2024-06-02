@@ -157,6 +157,7 @@
 // @match        https://okdiario.com/img*
 // @match        https://www.reuters.com/resizer*
 // @match        https://media.npr.org/assets*
+// @match        https://commons.wikishia.net/w/images*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -269,6 +270,7 @@
             case 'static.digiato.com':
                 return url.href.replace(/.jpg.webp/, '.jpg')
             case 'upload.wikimedia.org':
+            case 'commons.wikishia.net':
                 return url.href.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
             case 'ids.si.edu':
                 return url.href.replace(/max=\d+/, '')
