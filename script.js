@@ -158,6 +158,7 @@
 // @match        https://www.reuters.com/resizer*
 // @match        https://media.npr.org/assets*
 // @match        https://commons.wikishia.net/w/images*
+// @match        https://www.vam.ac.uk/dw/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -273,7 +274,7 @@
             case 'commons.wikishia.net':
                 return url.href.replace(/thumb\//, '').replace(/\/\d+px-.+$/, '')
             case 'ids.si.edu':
-                return url.href.replace(/max=\d+/, '')
+                return url.href.replace(/max=\d+|max_h=\d+/, '')
             case 'render.myfonts.net':
             case 'sig.monotype.com':
                 return url.href.replace(/&rs=\d+&/, '&rs=256&').replace(/&w=\d+&/, '&w=4000&')
@@ -361,6 +362,7 @@
             case 'thesoundofvinyl.com':
             case 'img.tebyan.net':
             case 'media.npr.org':
+            case 'www.vam.ac.uk':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---GOOGLE---
