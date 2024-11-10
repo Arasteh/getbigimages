@@ -159,6 +159,7 @@
 // @match        https://media.npr.org/assets*
 // @match        https://commons.wikishia.net/w/images*
 // @match        https://www.vam.ac.uk/dw/image*
+// @match        https://img.nbc.com/files*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -363,6 +364,7 @@
             case 'img.tebyan.net':
             case 'media.npr.org':
             case 'www.vam.ac.uk':
+            case 'img.nbc.com':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---GOOGLE---
@@ -407,4 +409,4 @@
         }
     }(new URL(location.href)));
     if (location.href !== destination) location.href = destination;
-}());
+}());Í
