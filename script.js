@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      0.1
+// @version      1.000
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @match        https://images1.bonhams.com/image*
@@ -160,6 +160,8 @@
 // @match        https://commons.wikishia.net/w/images*
 // @match        https://www.vam.ac.uk/dw/image*
 // @match        https://img.nbc.com/files*
+// @match        https://images.pexels.com/*
+// @match        https://album-cdn.varzesh3.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -365,6 +367,8 @@
             case 'media.npr.org':
             case 'www.vam.ac.uk':
             case 'img.nbc.com':
+            case 'images.pexels.com':
+            case 'album-cdn.varzesh3.com':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---GOOGLE---
@@ -409,4 +413,4 @@
         }
     }(new URL(location.href)));
     if (location.href !== destination) location.href = destination;
-}());Í
+}());
