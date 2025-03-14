@@ -4,6 +4,7 @@
 // @version      1.001
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
+// @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
 // @match        https://images1.bonhams.com/image*
 // @match        https://dkstatics-public.digikala.com/*
 // @match        https://www.christies.com/img/*
