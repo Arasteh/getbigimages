@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.000
+// @version      1.001
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @match        https://images1.bonhams.com/image*
