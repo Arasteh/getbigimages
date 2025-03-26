@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.001
+// @version      1.002
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -163,6 +163,7 @@
 // @match        https://img.nbc.com/files*
 // @match        https://images.pexels.com/*
 // @match        https://album-cdn.varzesh3.com/*
+// @match        https://time.com/redesign/_next/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -310,6 +311,8 @@
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
             case 'www.reuters.com':
                 return url.href.replace(/width=\d+/, '').replace(/quality=\d+/, '')
+            case 'time.com':
+                return url.href.replace(/https:\/\/time.com\/redesign\/_next\/image\/?url=/, '')
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
