@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.002
+// @version      1.003
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -163,6 +163,7 @@
 // @match        https://img.nbc.com/files*
 // @match        https://images.pexels.com/*
 // @match        https://album-cdn.varzesh3.com/*
+// @match        https://video-icdn.varzesh3.com/covers*
 // @match        https://time.com/redesign/_next/image*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
@@ -373,6 +374,7 @@
             case 'img.nbc.com':
             case 'images.pexels.com':
             case 'album-cdn.varzesh3.com':
+            case 'video-icdn.varzesh3.com':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---GOOGLE---
