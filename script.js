@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.003
+// @version      1.004
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -307,7 +307,7 @@
             case 'i.ebayimg.com':
                 return url.href.replace(/-l\d+\./, '-l1600.')
             case 'www.bonhams.com':
-                return unescape(url.search.replace(/\?url=/, ''))
+                return decodeURIComponent(url.href.split('?url=')[1].split('&')[0])
             case 'okdiario.com':
                 return url.origin + url.pathname.replace(/-\d+x\d+\.|\-scaled\./, '.')
             case 'www.reuters.com':
