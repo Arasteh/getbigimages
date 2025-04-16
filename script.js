@@ -313,7 +313,7 @@
             case 'www.reuters.com':
                 return url.href.replace(/width=\d+/, '').replace(/quality=\d+/, '')
             case 'time.com':
-                return url.href.replace(/https:\/\/time.com\/redesign\/_next\/image\/?url=/, '')
+                return decodeURIComponent(url.href.split('?url=')[1].split(/[&?]/)[0]);
             //case 'www.mizanonline.ir':
             //    return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
             //case 'pbs.twimg.com/profile_images':
