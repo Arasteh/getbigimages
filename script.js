@@ -165,6 +165,7 @@
 // @match        https://album-cdn.varzesh3.com/*
 // @match        https://video-icdn.varzesh3.com/covers*
 // @match        https://time.com/redesign/_next/image*
+// @match        https://dims.apnews.com/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -290,6 +291,7 @@
                 return url.href.replace(/\/thumbnail\/\d+x\d+\//, '/')
             case 'sothebys-com.brightspotcdn.com':
             case 'sothebys-md.brightspotcdn.com':
+            case 'dims.apnews.com':
                 return unescape(url.search.replace(/\?url=/, ''))
             case 'fotografia.islamoriente.com':
                 return url.href.replace(/\/styles\/236_all\/public\//, '/')
