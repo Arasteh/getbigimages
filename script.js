@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.007
+// @version      1.008
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -164,6 +164,7 @@
 // @match        https://images.pexels.com/*
 // @match        https://album-cdn.varzesh3.com/*
 // @match        https://video-icdn.varzesh3.com/covers*
+// @match        https://news-cdn.varzesh3.com/pictures*
 // @match        https://time.com/redesign/_next/image*
 // @match        https://dims.apnews.com/*
 // @match        https://digitalhub.fifa.com/transform*
@@ -378,6 +379,7 @@
             case 'images.pexels.com':
             case 'album-cdn.varzesh3.com':
             case 'video-icdn.varzesh3.com':
+            case 'news-cdn.varzesh3.com':
             case 'digitalhub.fifa.com/transform':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
