@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.012
+// @version      1.013
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -170,6 +170,7 @@
 // @match        https://digitalhub.fifa.com/transform*
 // @match        https://media.fotros.ir/smart*
 // @match        https://oneftbl-cms.imgix.net/*
+// @match        https://static.standard.co.uk/*
 // @include      /^https?://.*\/wp-content\/.*$/
 // @grant        none
 // ==/UserScript==
@@ -387,6 +388,7 @@
             case 'video-icdn.varzesh3.com':
             case 'news-cdn.varzesh3.com':
             case 'digitalhub.fifa.com/transform':
+            case 'static.standard.co.uk':
             //case 'media.cnn.com':
                 return url.origin + url.pathname;
 //---GOOGLE---
