@@ -10,7 +10,7 @@ This script is co-written with @ebraminio.
 
 **How to use:**
 1. Install Tampermonkey from https://www.tampermonkey.net/.
-2. Download the script (https://github.com/Arasteh/get-big-images/blob/main/script.js) and install it from Tampermonkey dashboard. (You can copy the code and paste it manually in Tampermonkey dashboard)
+2. Download the script ([https://github.com/Arasteh/get-big-images/blob/main/script.js](https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js)) and install it from Tampermonkey dashboard.
 3. Open an image (from supported websites) in a new tab. The script loads a bigger version of it.
 
 To make sure that the script is working, open this image in a new tab and wait for its largest size to load.
