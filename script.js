@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Canonicalize images addresses
 // @namespace    https://arasteh.studio/get-big-images/
-// @version      1.014
+// @version      1.015
 // @description  Load images in the highest resolution available.
 // @author       @ebraminio @arasteh
 // @downloadURL  https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -155,6 +155,7 @@
 // @match        https://i.ebayimg.com/images*
 // @match        https://www.bonhams.com/_next*
 // @match        https://pbs.twimg.com/profile_images*
+// @match        https://pbs.twimg.com/card_img*
 // @match        https://okdiario.com/img*
 // @match        https://www.reuters.com/resizer*
 // @match        https://media.npr.org/assets*
