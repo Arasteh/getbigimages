@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.018
+// @version		1.019
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -332,7 +332,7 @@
 			case 'oneftbl-cms.imgix.net':
 				return decodeURIComponent(url.pathname.startsWith('/https%3A%2F%2F') ? url.pathname.slice(1) : url.searchParams.get('image') || url);
 			case 'media.app.artisio.co':
-				return url.href.replace(/_sm.jpeg/, '_original.jpg')
+				return url.href.replace(/_sm.jpeg|_thumb.jpeg/, '_original.jpg')
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
