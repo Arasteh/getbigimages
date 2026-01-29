@@ -173,6 +173,7 @@
 // @match		https://oneftbl-cms.imgix.net/*
 // @match		https://static.standard.co.uk/*
 // @match		https://static.independent.co.uk/*
+// @match		https://media.app.artisio.co/media*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -330,6 +331,8 @@
 				return url.origin + decodeURIComponent(url.search.split('image=')[1]);
 			case 'oneftbl-cms.imgix.net':
 				return decodeURIComponent(url.pathname.startsWith('/https%3A%2F%2F') ? url.pathname.slice(1) : url.searchParams.get('image') || url);
+			case 'media.app.artisio.co':
+				return url.href.replace(/_sm./, '_original.')
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
