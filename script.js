@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.019
+// @version		1.020
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -174,6 +174,7 @@
 // @match		https://static.standard.co.uk/*
 // @match		https://static.independent.co.uk/*
 // @match		https://media.app.artisio.co/media*
+// @match		https://museumsofindia.gov.in/repository*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -333,6 +334,11 @@
 				return decodeURIComponent(url.pathname.startsWith('/https%3A%2F%2F') ? url.pathname.slice(1) : url.searchParams.get('image') || url);
 			case 'media.app.artisio.co':
 				return url.href.replace(/_sm.jpeg|_thumb.jpeg/, '_original.jpg')
+			case 'museumsofindia.gov.in':
+				return url.href.replace(
+				/repository\/thumbnail\/(im_kol\/)([^_]+(?:-[^_]+)*)_01_h_PV_480X640\.png$/,
+				'repository/file/$1$2/$2_01_h.jpg'
+			);
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
