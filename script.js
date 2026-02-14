@@ -175,7 +175,7 @@
 // @match		https://static.independent.co.uk/*
 // @match		https://media.app.artisio.co/media*
 // @match		https://museumsofindia.gov.in/repository*
-// @match		https://static.wixstatic.com/media
+// @match		https://static.wixstatic.com/media*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
