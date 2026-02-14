@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.020
+// @version		1.02۱
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -175,6 +175,7 @@
 // @match		https://static.independent.co.uk/*
 // @match		https://media.app.artisio.co/media*
 // @match		https://museumsofindia.gov.in/repository*
+// @match		https://static.wixstatic.com/media
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -339,6 +340,8 @@
 				/repository\/thumbnail\/(im_kol\/)([^_]+(?:-[^_]+)*)_01_h_PV_480X640\.png$/,
 				'repository/file/$1$2/$2_01_h.jpg'
 			);
+			case 'static.wixstatic.com':
+				return url.href.replace(/(\.(jpg|jpeg|png|webp))\/.+$/i, '$1')
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
