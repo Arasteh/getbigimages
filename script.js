@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.021
+// @version		1.022
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -328,9 +328,9 @@
 			case 'www.reuters.com':
 				return url.href.replace(/width=\d+/, '').replace(/quality=\d+/, '')
 			case 'time.com':
-				return decodeURIComponent(url.href.split('?url=')[1].split(/[&?]/)[0]);
+				return decodeURIComponent(url.href.split('?url=')[1].split(/[&?]/)[0])
 			case 'media.fotros.ir':
-				return url.origin + decodeURIComponent(url.search.split('image=')[1]);
+				return url.origin + decodeURIComponent(url.search.split('image=')[1])
 			case 'oneftbl-cms.imgix.net':
 				return decodeURIComponent(url.pathname.startsWith('/https%3A%2F%2F') ? url.pathname.slice(1) : url.searchParams.get('image') || url);
 			case 'media.app.artisio.co':
@@ -339,9 +339,9 @@
 				return url.href.replace(
 				/repository\/thumbnail\/(im_kol\/)([^_]+(?:-[^_]+)*)_01_h_PV_480X640\.png$/,
 				'repository/file/$1$2/$2_01_h.jpg'
-			);
+			)
 			case 'static.wixstatic.com':
-				return url.href.replace(/(\.(jpg|jpeg|png|webp))\/.+$/i, '$1')
+				return url.href.replace(/(\.jpg)\/.+$/i, '$1');
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
