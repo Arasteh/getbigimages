@@ -341,7 +341,7 @@
 				'repository/file/$1$2/$2_01_h.jpg'
 			)
 			case 'static.wixstatic.com':
-				return url.href.replace(/(\.jpg)\/.+$/i, '$1');
+				return url.href.replace(/(\.jpg)\/.+$/i, '$1')
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
