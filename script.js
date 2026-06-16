@@ -176,6 +176,7 @@
 // @match		https://media.app.artisio.co/media*
 // @match		https://museumsofindia.gov.in/repository*
 // @match		https://static.wixstatic.com/media*
+// @match		https://images.wsj.net/*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -407,6 +408,7 @@
 			case 'digitalhub.fifa.com/transform':
 			case 'static.standard.co.uk':
 			case 'static.independent.co.uk':
+			case 'images.wsj.net':
 			//case 'media.cnn.com':
 				return url.origin + url.pathname;
 //---GOOGLE---
