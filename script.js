@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.026
+// @version		1.027
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -261,7 +261,11 @@
 			case 'media-cldnry.s-nbcnews.com':
 				return url.href.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
 			case 'pbs.twimg.com':
-				return url.href.replace(/name=\w+/, 'name=orig');
+				const currentFormat = url.searchParams.get('format');
+				if (currentFormat) {
+					return url.origin + url.pathname + '?format=' + currentFormat + '&name=orig';
+				}
+			    return url.origin + url.pathname + '?format=jpg&name=orig';
 			case 'media.pitchfork.com':
 			case 'media.wired.com':
 				return url.href.replace(/\/\d:\d\/.+,c_limit\//, '/');
