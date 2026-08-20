@@ -261,8 +261,7 @@
 			case 'media-cldnry.s-nbcnews.com':
 				return url.href.replace(/\/upload\/.+\/rockcms\//, '/upload/rockcms/');
 			case 'pbs.twimg.com':
-				const ext = url.pathname.split('.').pop()?.toLowerCase() || 'jpg';
-    			return url.origin + url.pathname + '?format=' + ext + '&name=orig';
+				return url.href.replace(/name=\w+/, 'name=orig');
 			case 'media.pitchfork.com':
 			case 'media.wired.com':
 				return url.href.replace(/\/\d:\d\/.+,c_limit\//, '/');
