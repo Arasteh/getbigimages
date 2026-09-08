@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.028
+// @version		1.029
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -177,6 +177,7 @@
 // @match		https://museumsofindia.gov.in/repository*
 // @match		https://static.wixstatic.com/media*
 // @match		https://images.wsj.net/*
+// @match		https://*.wikiart.org/images*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -344,15 +345,14 @@
 			)
 			case 'static.wixstatic.com':
 				return url.href.replace(/(\.(jpg|jpeg|png|webp))\/.+$/i, '$1')
+			case (url.hostname.endsWith('.wikiart.org') ? url.hostname : ''):
+				return url.href.replace(/!PinterestSmall\.jpg$/, '');
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
 			//	return url.origin + url.pathname.replace(/_\d+x\d+.jpg/, '.jpg')
 //---APP STORE---
-			case 'is1-ssl.mzstatic.com':
-			case 'is2-ssl.mzstatic.com':
-			case 'is3-ssl.mzstatic.com':
-			case 'is4-ssl.mzstatic.com':
+			case (/^is[1-4]-ssl\.mzstatic\.com$/.test(url.hostname) ? url.hostname : ''):
 				return url.origin + url.pathname.replace(/\.(png|jpg)\/\d+x0w.webp/, '.$1/8000x0w.$1');
 //---TRIM EVERYTHING AFTER '?'---
 			case 'dkstatics-public.digikala.com':
@@ -413,28 +413,7 @@
 			//case 'media.cnn.com':
 				return url.origin + url.pathname;
 //---GOOGLE---
-			case 'lh1.googleusercontent.com':
-			case 'lh2.googleusercontent.com':
-			case 'lh3.googleusercontent.com':
-			case 'lh4.googleusercontent.com':
-			case 'lh5.googleusercontent.com':
-			case 'lh6.googleusercontent.com':
-			case 'lh7.googleusercontent.com':
-			case 'lh8.googleusercontent.com':
-			case 'lh9.googleusercontent.com':
-			case 'play-lh.googleusercontent.com':
-			case 'yt1.googleusercontent.com':
-			case 'yt2.googleusercontent.com':
-			case 'yt3.googleusercontent.com':
-			case 'yt4.googleusercontent.com':
-			case 'yt5.googleusercontent.com':
-			case 'yt6.googleusercontent.com':
-			case 'yt7.googleusercontent.com':
-			case 'yt8.googleusercontent.com':
-			case 'yt9.googleusercontent.com':
-			case 'yt1.ggpht.com':
-			case 'yt2.ggpht.com':
-			case 'yt3.ggpht.com':
+			case (/\.(googleusercontent|ggpht)\.com$/.test(url.hostname) ? url.hostname : ''):
 				return url.origin + url.pathname.replace(/=.+/, '=s8000');
 //---DECODL---
 			case 'decodl.net':
