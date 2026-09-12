@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.029
+// @version		1.030
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -372,7 +372,7 @@
 			case 'shop.matchstic.com':
 			case 'img.semafor.com':
 			case 'wearecollins.imgix.net':
-			case 'pentagram-production.imgix.net':
+			//case 'pentagram-production.imgix.net':
 			case 'prod-lippincott.imgix.net':
 			case 'dstudio.imgix.net':
 			case 'megaphone.imgix.net':
