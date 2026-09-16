@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.033
+// @version		1.034
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -181,6 +181,7 @@
 // @match		https://assets.bwbx.io/images*
 // @match		https://cdn-live.foreignaffairs.com/sites/default*
 // @match		https://ca-times.brightspotcdn.com/dims*
+// @match		https://i.abcnewsfe.com/*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -419,6 +420,7 @@
 			case 'static.standard.co.uk':
 			case 'static.independent.co.uk':
 			case 'images.wsj.net':
+			case 'i.abcnewsfe.com':
 			//case 'media.cnn.com':
 				return url.origin + url.pathname;
 //---GOOGLE---
