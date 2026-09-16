@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.030
+// @version		1.031
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -178,6 +178,7 @@
 // @match		https://static.wixstatic.com/media*
 // @match		https://images.wsj.net/*
 // @match		https://*.wikiart.org/images*
+// @match		https://assets.bwbx.io/images*
 // @include		/^https?://.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -347,6 +348,9 @@
 				return url.href.replace(/(\.(jpg|jpeg|png|webp))\/.+$/i, '$1')
 			case (url.hostname.endsWith('.wikiart.org') ? url.hostname : ''):
 				return url.href.replace(/!PinterestSmall\.jpg$/, '');
+
+			case 'assets.bwbx.io':
+				return url.origin + url.pathname.replace(/\/\d+x\d+(\.[a-z]+)$/, '/-1x-1$1');
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
