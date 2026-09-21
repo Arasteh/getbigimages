@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.034
+// @version		1.035
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -182,7 +182,7 @@
 // @match		https://cdn-live.foreignaffairs.com/sites/default*
 // @match		https://ca-times.brightspotcdn.com/dims*
 // @match		https://i.abcnewsfe.com/*
-// @include		/^https?://.*\/wp-content\/.*$/
+// @include		/^https?:\/\/.*\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
 
