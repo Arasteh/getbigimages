@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.036
+// @version		1.037
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -15,6 +15,8 @@
 // @match		https://www.filimo.com/shot/wp-content/uploads/*
 // @match		https://img.freepik.com/free-*
 // @match		https://img.freepik.com/premium-*
+// @match		https://img.magnific.com/free-*
+// @match		https://img.magnific.com/premium-*
 // @match		https://statics.basalam.com/public*
 // @match		https://sabakhabar.ir/wp-content*
 // @match		https://cdn.isna.ir/d*
@@ -198,6 +200,7 @@
 			case 'images-na.ssl-images-amazon.com':
 				return url.href.replace(/(@+)[^@]+\.|\._.+_\./, '$1.');
 			case 'img.freepik.com':
+			case 'img.magnific.com':
 				return url.origin + url.pathname + '?w=2000';
 			case 'statics.basalam.com':
 				return url.href.replace(/_.+\.jpg/, '');
