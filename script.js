@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.037
+// @version		1.038
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
 // @match		https://images1.bonhams.com/image*
 // @match		https://dkstatics-public.digikala.com/*
 // @match		https://www.christies.com/img/*
+// @match		https://www.christies.com.cn/img/*
 // @match		https://ipm.ssaa.ir/Storage*
 // @match		https://m.media-amazon.com/images/*
 // @match		https://images-eu.ssl-images-amazon.com/images/*
@@ -370,6 +371,7 @@
 //---TRIM EVERYTHING AFTER '?'---
 			case 'dkstatics-public.digikala.com':
 			case 'www.christies.com':
+			case 'www.christies.com.cn':
 			case 'ipm.ssaa.ir':
 			case 'images.unsplash.com':
 			case 'imageio.forbes.com':
