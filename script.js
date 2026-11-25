@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name		Canonicalize images addresses
 // @namespace	https://arasteh.studio/get-big-images/
-// @version		1.038
+// @version		1.039
 // @description	Load images in the highest resolution available.
 // @author		@ebraminio @arasteh
 // @downloadURL	https://raw.githubusercontent.com/Arasteh/getbigimages/refs/heads/main/script.js
@@ -185,6 +185,7 @@
 // @match		https://cdn-live.foreignaffairs.com/sites/default*
 // @match		https://ca-times.brightspotcdn.com/dims*
 // @match		https://i.abcnewsfe.com/*
+// @match		https://i.ytimg.com/*
 // @include		/^https?:\/\/[^\/]+\/wp-content\/.*$/
 // @grant		none
 // ==/UserScript==
@@ -361,6 +362,8 @@
 				return url.origin + url.pathname.replace(/\/styles\/[^/]+\//, '/styles/_webp_x_large_1x/') + url.search;
 			case 'ca-times.brightspotcdn.com':
 				return url.searchParams.get('url');
+			case 'i.ytimg.com':
+				return url.href.replace(/\/hqdefault\.jpg/, '/maxresdefault.jpg');
 			//case 'www.mizanonline.ir':
 			//	return url.href.replace(/_albums/, '').replace(/\/thumbnails\/thm_/, '/')
 			//case 'pbs.twimg.com/profile_images':
